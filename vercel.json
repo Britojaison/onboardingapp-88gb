@@ -1,6 +1,0 @@
-{
-  "buildCommand": "cd employee-onboarding-app && npm run build",
-  "outputDirectory": "employee-onboarding-app/.next",
-  "installCommand": "cd employee-onboarding-app && npm install",
-  "rootDirectory": "employee-onboarding-app"
-}
