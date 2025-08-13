@@ -196,7 +196,7 @@ export default function GalleryPage() {
         <CardContent>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featuredItems.map((item) => (
-              <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+              <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col h-full">
                 <div className="relative">
                   <img
                     src={item.imageUrl}
@@ -210,11 +210,11 @@ export default function GalleryPage() {
                     </Badge>
                   </div>
                 </div>
-                <CardHeader className="pb-3">
+                <CardHeader className="pb-3 flex flex-col flex-1">
                   <CardTitle className="text-lg">{item.title}</CardTitle>
-                  <CardDescription>{item.description}</CardDescription>
+                  <CardDescription className="flex-1">{item.description}</CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-3">
+                <CardContent className="space-y-3 mt-auto">
                   <div className="flex items-center justify-between text-sm text-muted-foreground">
                     <div className="flex items-center gap-1">
                       <MapPin className="h-4 w-4" />
@@ -272,7 +272,7 @@ export default function GalleryPage() {
               {galleryItems
                 .filter(item => category.key === "all" || item.category === category.key)
                 .map((item) => (
-                  <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col h-full">
                     <div className="relative group">
                       <img
                         src={item.imageUrl}
@@ -286,8 +286,8 @@ export default function GalleryPage() {
                         </Button>
                       </div>
                     </div>
-                    <CardContent className="p-4">
-                      <div className="space-y-2">
+                    <CardContent className="p-4 flex flex-col flex-1">
+                      <div className="space-y-2 flex-1">
                         <h3 className="font-semibold text-sm line-clamp-1">{item.title}</h3>
                         <p className="text-xs text-muted-foreground line-clamp-2">{item.description}</p>
                         <div className="flex items-center justify-between text-xs text-muted-foreground">

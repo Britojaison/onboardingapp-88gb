@@ -310,8 +310,8 @@ export default function OfficePage() {
             {officeInfo.facilities.map((facility) => {
               const Icon = facility.icon
               return (
-                <Card key={facility.name} className="hover:shadow-md transition-shadow">
-                  <CardHeader>
+                <Card key={facility.name} className="hover:shadow-md transition-shadow flex flex-col h-full">
+                  <CardHeader className="flex flex-col flex-1">
                     <div className="flex items-center justify-between">
                       <Icon className="h-5 w-5 text-primary" />
                       <Badge className={getStatusColor(facility.status)}>
@@ -319,9 +319,9 @@ export default function OfficePage() {
                       </Badge>
                     </div>
                     <CardTitle className="text-lg">{facility.name}</CardTitle>
-                    <CardDescription>{facility.description}</CardDescription>
+                    <CardDescription className="flex-1">{facility.description}</CardDescription>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="mt-auto">
                     <div className="text-sm text-muted-foreground">
                       <strong>Location:</strong> {facility.location}
                     </div>
@@ -335,12 +335,12 @@ export default function OfficePage() {
         <TabsContent value="departments" className="space-y-6">
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {officeInfo.departments.map((dept) => (
-              <Card key={dept.name} className="hover:shadow-md transition-shadow">
-                <CardHeader>
+              <Card key={dept.name} className="hover:shadow-md transition-shadow flex flex-col h-full">
+                <CardHeader className="flex flex-col flex-1">
                   <CardTitle className="text-lg">{dept.name}</CardTitle>
-                  <CardDescription>Department information and contacts</CardDescription>
+                  <CardDescription className="flex-1">Department information and contacts</CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-3">
+                <CardContent className="space-y-3 mt-auto">
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="font-medium">Floor:</span>

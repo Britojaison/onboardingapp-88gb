@@ -12,15 +12,6 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import {
   Sheet,
   SheetContent,
@@ -33,22 +24,21 @@ import {
   FileText, 
   GraduationCap, 
   Home, 
-  Image, 
-  Settings, 
-  User,
+  Image as ImageIcon, 
   Building2,
   Menu
 } from "lucide-react"
 import { useState } from "react"
+import Image from "next/image"
 
 const navigationItems = [
   {
-    title: "Dashboard",
+    title: "Home",
     href: "/",
     icon: Home,
   },
   {
-    title: "Onboarding Tasks",
+    title: "Tasks & Procedures",
     href: "/tasks",
     icon: GraduationCap,
   },
@@ -75,7 +65,7 @@ const navigationItems = [
   {
     title: "Gallery",
     href: "/gallery",
-    icon: Image,
+    icon: ImageIcon,
   },
 ]
 
@@ -90,7 +80,7 @@ export function Navigation() {
           <div className="flex items-center space-x-4">
             <Link href="/" className="flex items-center space-x-2">
               <Building2 className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold">Onboarding Portal</span>
+              <span className="text-xl font-bold">Employee Portal</span>
             </Link>
           </div>
 
@@ -130,7 +120,7 @@ export function Navigation() {
                 <nav className="flex flex-col gap-4">
                   <div className="flex items-center space-x-2 py-4">
                     <Building2 className="h-8 w-8 text-primary" />
-                    <span className="text-xl font-bold">Onboarding Portal</span>
+                    <span className="text-xl font-bold">Employee Portal</span>
                   </div>
                   {navigationItems.map((item) => {
                     const Icon = item.icon
@@ -153,35 +143,16 @@ export function Navigation() {
               </SheetContent>
             </Sheet>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-                  <Avatar className="h-8 w-8">
-                    <AvatarImage src="/avatars/01.png" alt="@user" />
-                    <AvatarFallback>BJ</AvatarFallback>
-                  </Avatar>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56" align="end" forceMount>
-                <DropdownMenuLabel className="font-normal">
-                  <div className="flex flex-col space-y-1">
-                    <p className="text-sm font-medium leading-none">Brito Jaison</p>
-                    <p className="text-xs leading-none text-muted-foreground">
-                      britojaison123@gmail.com
-                    </p>
-                  </div>
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <User className="mr-2 h-4 w-4" />
-                  <span>Profile</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Settings className="mr-2 h-4 w-4" />
-                  <span>Settings</span>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            {/* 88GB Logo */}
+            <div className="flex items-center">
+              <Image
+                src="/88gb.png"
+                alt="88GB Logo"
+                width={40}
+                height={40}
+                className="h-10 w-auto"
+              />
+            </div>
           </div>
         </div>
       </div>

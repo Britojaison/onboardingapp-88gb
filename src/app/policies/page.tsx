@@ -182,8 +182,8 @@ export default function PoliciesPage() {
             {policies.map((policy) => {
               const Icon = getCategoryIcon(policy.category)
               return (
-                <Card key={policy.id} className="hover:shadow-md transition-shadow">
-                  <CardHeader>
+                <Card key={policy.id} className="hover:shadow-md transition-shadow flex flex-col h-full">
+                  <CardHeader className="flex flex-col flex-1">
                     <div className="flex items-center justify-between">
                       <Icon className="h-5 w-5 text-muted-foreground" />
                       <Badge className={getCategoryColor(policy.category)}>
@@ -191,9 +191,9 @@ export default function PoliciesPage() {
                       </Badge>
                     </div>
                     <CardTitle className="text-lg">{policy.title}</CardTitle>
-                    <CardDescription>{policy.description}</CardDescription>
+                    <CardDescription className="flex-1">{policy.description}</CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-4 mt-auto">
                     <div className="space-y-2 text-sm text-muted-foreground">
                       <div className="flex justify-between">
                         <span>Version:</span>
@@ -236,8 +236,8 @@ export default function PoliciesPage() {
                 .map((policy) => {
                   const Icon = getCategoryIcon(policy.category)
                   return (
-                    <Card key={policy.id} className="hover:shadow-md transition-shadow">
-                      <CardHeader>
+                    <Card key={policy.id} className="hover:shadow-md transition-shadow flex flex-col h-full">
+                      <CardHeader className="flex flex-col flex-1">
                         <div className="flex items-center justify-between">
                           <Icon className="h-5 w-5 text-muted-foreground" />
                           <Badge className={getCategoryColor(policy.category)}>
@@ -245,9 +245,9 @@ export default function PoliciesPage() {
                           </Badge>
                         </div>
                         <CardTitle className="text-lg">{policy.title}</CardTitle>
-                        <CardDescription>{policy.description}</CardDescription>
+                        <CardDescription className="flex-1">{policy.description}</CardDescription>
                       </CardHeader>
-                      <CardContent className="space-y-4">
+                      <CardContent className="space-y-4 mt-auto">
                         <div className="space-y-2 text-sm text-muted-foreground">
                           <div className="flex justify-between">
                             <span>Version:</span>

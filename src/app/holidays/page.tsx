@@ -204,8 +204,8 @@ export default function HolidaysPage() {
             <CardContent>
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {holidays.map((holiday) => (
-                  <Card key={holiday.id} className="hover:shadow-md transition-shadow">
-                    <CardHeader className="pb-3">
+                  <Card key={holiday.id} className="hover:shadow-md transition-shadow flex flex-col h-full">
+                    <CardHeader className="pb-3 flex flex-col flex-1">
                       <div className="flex items-center justify-between">
                         <Badge className={getHolidayTypeColor(holiday.type)}>
                           {holiday.type}
@@ -215,9 +215,9 @@ export default function HolidaysPage() {
                         )}
                       </div>
                       <CardTitle className="text-lg">{holiday.name}</CardTitle>
-                      <CardDescription>{holiday.description}</CardDescription>
+                      <CardDescription className="flex-1">{holiday.description}</CardDescription>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="mt-auto">
                       <div className="text-sm font-medium">
                         {new Date(holiday.date).toLocaleDateString('en-US', {
                           weekday: 'long',

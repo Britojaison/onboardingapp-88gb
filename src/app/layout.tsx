@@ -7,12 +7,12 @@ import { Footer } from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Employee Onboarding Portal",
-  description: "Complete onboarding experience for new employees",
+  title: "Employee Portal",
+  description: "Central hub for company information, policies, and resources",
 };
 
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode;
 }) {

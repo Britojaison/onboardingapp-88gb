@@ -200,8 +200,8 @@ export default function TutorialsPage() {
             {featuredTutorials.map((tutorial) => {
               const Icon = tutorial.icon
               return (
-                <Card key={tutorial.id} className="hover:shadow-md transition-shadow border-2 border-primary/20">
-                  <CardHeader>
+                <Card key={tutorial.id} className="hover:shadow-md transition-shadow border-2 border-primary/20 flex flex-col h-full">
+                  <CardHeader className="flex flex-col flex-1">
                     <div className="flex items-center justify-between">
                       <Icon className="h-5 w-5 text-primary" />
                       <Badge className={getDifficultyColor(tutorial.difficulty)}>
@@ -209,9 +209,9 @@ export default function TutorialsPage() {
                       </Badge>
                     </div>
                     <CardTitle className="text-lg">{tutorial.title}</CardTitle>
-                    <CardDescription>{tutorial.description}</CardDescription>
+                    <CardDescription className="flex-1">{tutorial.description}</CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-4 mt-auto">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Clock className="h-4 w-4" />
                       <span>{tutorial.estimatedTime} minutes</span>
@@ -271,8 +271,8 @@ export default function TutorialsPage() {
                 .map((tutorial) => {
                   const Icon = tutorial.icon
                   return (
-                    <Card key={tutorial.id} className="hover:shadow-md transition-shadow">
-                      <CardHeader>
+                    <Card key={tutorial.id} className="hover:shadow-md transition-shadow flex flex-col h-full">
+                      <CardHeader className="flex flex-col flex-1">
                         <div className="flex items-center justify-between">
                           <Icon className="h-5 w-5 text-muted-foreground" />
                           <div className="flex gap-2">
@@ -288,9 +288,9 @@ export default function TutorialsPage() {
                           </div>
                         </div>
                         <CardTitle className="text-lg">{tutorial.title}</CardTitle>
-                        <CardDescription>{tutorial.description}</CardDescription>
+                        <CardDescription className="flex-1">{tutorial.description}</CardDescription>
                       </CardHeader>
-                      <CardContent className="space-y-4">
+                      <CardContent className="space-y-4 mt-auto">
                         <div className="flex items-center gap-2 text-sm text-muted-foreground">
                           <Clock className="h-4 w-4" />
                           <span>{tutorial.estimatedTime} minutes</span>
