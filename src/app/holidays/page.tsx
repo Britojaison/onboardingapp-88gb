@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -87,16 +89,16 @@ export default function HolidaysPage() {
   ]
 
   const officeInfo = {
-    address: "123 Tech Park, Phase 2, Electronic City, Bangalore - 560100",
+    address: "3rd floor, Landmark: Polar, Bear Icecream Building, 88GB, 27th Main Rd, Parangi Palaya, Sector 2, HSR Layout, Bengaluru, Karnataka 560102",
     phone: "+91 80 1234 5678",
-    email: "office@company.com",
+    email: "https://www.88gb.in/",
     workingHours: {
-      monday: "9:00 AM - 6:00 PM",
-      tuesday: "9:00 AM - 6:00 PM",
-      wednesday: "9:00 AM - 6:00 PM",
-      thursday: "9:00 AM - 6:00 PM",
-      friday: "9:00 AM - 6:00 PM",
-      saturday: "9:00 AM - 1:00 PM",
+      monday: "10:00 AM - 7:00 PM",
+      tuesday: "10:00 AM - 7:00 PM",
+      wednesday: "10:00 AM - 7:00 PM",
+      thursday: "10:00 AM - 7:00 PM",
+      friday: "10:00 AM - 7:00 PM",
+      saturday: "10:00 AM - 7:00 PM",
       sunday: "Closed"
     },
     facilities: [
@@ -104,7 +106,7 @@ export default function HolidaysPage() {
       { name: "Cafeteria", icon: Coffee, description: "Full-service cafeteria with meals" },
       { name: "Parking", icon: Car, description: "Free parking for employees" },
       { name: "Meeting Rooms", icon: Users, description: "Conference rooms and meeting spaces" },
-      { name: "Gym", icon: Building2, description: "On-site fitness center" },
+      //{ name: "Gym", icon: Building2, description: "On-site fitness center" },
       { name: "Medical Room", icon: Building2, description: "First aid and medical assistance" }
     ]
   }
@@ -256,7 +258,10 @@ export default function HolidaysPage() {
                     <span>{officeInfo.email}</span>
                   </div>
                 </div>
-                <Button className="w-full">
+                <Button 
+                  className="w-full"
+                  onClick={() => window.open('https://maps.app.goo.gl/NcnU1mSqwtre12aa9', '_blank')}
+                >
                   <MapPin className="h-4 w-4 mr-2" />
                   Get Directions
                 </Button>

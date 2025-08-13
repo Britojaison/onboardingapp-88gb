@@ -1,8 +1,11 @@
+"use client"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { 
   FileText, 
   Search, 
@@ -13,8 +16,10 @@ import {
   Shield,
   DollarSign,
   AlertTriangle,
-  Building2
+  Building2,
+  X
 } from "lucide-react"
+import { useState } from "react"
 
 export default function PoliciesPage() {
   // Mock data - in real app, this would come from Supabase
@@ -29,20 +34,10 @@ export default function PoliciesPage() {
       lastUpdated: "2024-01-15",
       fileSize: "2.5 MB",
       icon: FileText,
+      pdfUrl: "/pdfs/employee-handbook.pdf",
     },
     {
       id: 2,
-      title: "Code of Conduct",
-      description: "Standards of behavior and ethical guidelines for all employees",
-      category: "general",
-      version: "v1.5",
-      effectiveDate: "2024-01-01",
-      lastUpdated: "2024-01-10",
-      fileSize: "1.2 MB",
-      icon: Users,
-    },
-    {
-      id: 3,
       title: "Dress Code Policy",
       description: "Guidelines for appropriate workplace attire and appearance",
       category: "hr",
@@ -51,9 +46,10 @@ export default function PoliciesPage() {
       lastUpdated: "2024-01-05",
       fileSize: "800 KB",
       icon: Users,
+      pdfUrl: "/pdfs/dress-code-policy.pdf",
     },
     {
-      id: 4,
+      id: 3,
       title: "Leave and Time Off Policy",
       description: "Rules and procedures for vacation, sick leave, and other time off",
       category: "hr",
@@ -62,9 +58,10 @@ export default function PoliciesPage() {
       lastUpdated: "2024-01-12",
       fileSize: "1.8 MB",
       icon: Calendar,
+      pdfUrl: "/pdfs/leave-time-off-policy.pdf",
     },
     {
-      id: 5,
+      id: 4,
       title: "IT Security Policy",
       description: "Cybersecurity guidelines and data protection procedures",
       category: "it",
@@ -73,9 +70,10 @@ export default function PoliciesPage() {
       lastUpdated: "2024-01-08",
       fileSize: "1.5 MB",
       icon: Shield,
+      pdfUrl: "/pdfs/it-security-policy.pdf",
     },
     {
-      id: 6,
+      id: 5,
       title: "Expense Reimbursement Policy",
       description: "Guidelines for business expenses and reimbursement procedures",
       category: "finance",
@@ -84,21 +82,11 @@ export default function PoliciesPage() {
       lastUpdated: "2024-01-03",
       fileSize: "950 KB",
       icon: DollarSign,
+      pdfUrl: "/pdfs/expense-reimbursement-policy.pdf",
     },
     {
-      id: 7,
-      title: "Workplace Safety Policy",
-      description: "Safety guidelines and emergency procedures for the workplace",
-      category: "safety",
-      version: "v1.1",
-      effectiveDate: "2024-01-01",
-      lastUpdated: "2024-01-01",
-      fileSize: "1.1 MB",
-      icon: AlertTriangle,
-    },
-    {
-      id: 8,
-      title: "Remote Work Policy",
+      id: 6,
+      title: "Work From Home Policy",
       description: "Guidelines for working from home and remote work arrangements",
       category: "hr",
       version: "v1.4",
@@ -106,6 +94,7 @@ export default function PoliciesPage() {
       lastUpdated: "2024-01-07",
       fileSize: "1.3 MB",
       icon: Building2,
+      pdfUrl: "/pdfs/Work from Home Policy_88GB.pdf",
     },
   ]
 
@@ -114,7 +103,6 @@ export default function PoliciesPage() {
     { key: "hr", label: "HR", icon: Users, count: policies.filter(p => p.category === "hr").length },
     { key: "it", label: "IT", icon: Shield, count: policies.filter(p => p.category === "it").length },
     { key: "finance", label: "Finance", icon: DollarSign, count: policies.filter(p => p.category === "finance").length },
-    { key: "safety", label: "Safety", icon: AlertTriangle, count: policies.filter(p => p.category === "safety").length },
   ]
 
   const getCategoryIcon = (category: string) => {
@@ -137,6 +125,26 @@ export default function PoliciesPage() {
       default:
         return "bg-gray-100 text-gray-800"
     }
+  }
+
+  const [isPdfModalOpen, setIsPdfModalOpen] = useState(false)
+  const [selectedPdfUrl, setSelectedPdfUrl] = useState<string | null>(null)
+
+  const handleOpenPdf = (url: string) => {
+    // Check if it's mobile (small screen)
+    if (window.innerWidth < 768) {
+      // Mobile: open in new tab
+      window.open(url, '_blank')
+    } else {
+      // Desktop: open in popup modal
+      setSelectedPdfUrl(url)
+      setIsPdfModalOpen(true)
+    }
+  }
+
+  const handleClosePdf = () => {
+    setIsPdfModalOpen(false)
+    setSelectedPdfUrl(null)
   }
 
   return (
@@ -213,11 +221,24 @@ export default function PoliciesPage() {
                       </div>
                     </div>
                     <div className="flex space-x-2">
-                      <Button size="sm" className="flex-1">
+                      <Button 
+                        size="sm" 
+                        className="flex-1"
+                        onClick={() => handleOpenPdf(policy.pdfUrl)}
+                      >
                         <Eye className="h-4 w-4 mr-2" />
                         View
                       </Button>
-                      <Button size="sm" variant="outline">
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        onClick={() => {
+                          const link = document.createElement('a');
+                          link.href = policy.pdfUrl;
+                          link.download = `${policy.title}.pdf`;
+                          link.click();
+                        }}
+                      >
                         <Download className="h-4 w-4" />
                       </Button>
                     </div>
@@ -267,11 +288,24 @@ export default function PoliciesPage() {
                           </div>
                         </div>
                         <div className="flex space-x-2">
-                          <Button size="sm" className="flex-1">
+                          <Button 
+                            size="sm" 
+                            className="flex-1"
+                            onClick={() => handleOpenPdf(policy.pdfUrl)}
+                          >
                             <Eye className="h-4 w-4 mr-2" />
                             View
                           </Button>
-                          <Button size="sm" variant="outline">
+                          <Button 
+                            size="sm" 
+                            variant="outline"
+                            onClick={() => {
+                              const link = document.createElement('a');
+                              link.href = policy.pdfUrl;
+                              link.download = `${policy.title}.pdf`;
+                              link.click();
+                            }}
+                          >
                             <Download className="h-4 w-4" />
                           </Button>
                         </div>
@@ -283,6 +317,26 @@ export default function PoliciesPage() {
           </TabsContent>
         ))}
       </Tabs>
+
+      <Dialog open={isPdfModalOpen} onOpenChange={setIsPdfModalOpen}>
+        <DialogContent className="w-[95%] max-w-[1800px] h-[95vh] p-0">
+          <DialogHeader className="px-6 py-4 border-b">
+            <DialogTitle className="text-lg font-semibold">
+              {selectedPdfUrl ? selectedPdfUrl.split('/').pop()?.replace('.pdf', '').replace(/_/g, ' ') : 'PDF Viewer'}
+            </DialogTitle>
+          </DialogHeader>
+          {selectedPdfUrl && (
+            <div className="flex-1 p-0">
+              <iframe
+                src={`${selectedPdfUrl}#toolbar=1&navpanes=1&scrollbar=1`}
+                className="w-full h-full min-h-[calc(95vh-80px)]"
+                title="PDF Viewer"
+                frameBorder="0"
+              />
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   )
 } 
