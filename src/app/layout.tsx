@@ -20,6 +20,13 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/88gb.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/88gb.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/88gb.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/88gb.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/88gb.png" />
+        <meta name="theme-color" content="#000000" />
       </head>
       <body className={inter.className}>
         <div className="min-h-screen bg-background flex flex-col">
