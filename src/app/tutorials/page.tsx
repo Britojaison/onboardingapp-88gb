@@ -187,42 +187,42 @@ export default function TutorialsPage() {
       {/* Featured Tutorials */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-3">
+          <CardTitle className="flex items-center gap-2 sm:gap-3">
             <Star className="h-5 w-5 text-yellow-500" />
             Featured Tutorials
           </CardTitle>
-          <CardDescription>
+          <CardDescription className="text-sm sm:text-base">
             Essential guides to get you started quickly
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featuredTutorials.map((tutorial) => {
               const Icon = tutorial.icon
               return (
                 <Card key={tutorial.id} className="hover:shadow-md transition-shadow border-2 border-primary/20 flex flex-col h-full">
                   <CardHeader className="flex-shrink-0">
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center justify-between mb-3 sm:mb-4">
                       <Icon className="h-5 w-5 text-primary" />
                       <Badge className={getDifficultyColor(tutorial.difficulty)}>
                         {tutorial.difficulty}
                       </Badge>
                     </div>
-                    <CardTitle className="text-lg mb-3">{tutorial.title}</CardTitle>
-                    <CardDescription className="min-h-[3rem] flex items-start">
+                    <CardTitle className="text-base sm:text-lg mb-2 sm:mb-3">{tutorial.title}</CardTitle>
+                    <CardDescription className="min-h-[3rem] flex items-start text-sm sm:text-base">
                       {tutorial.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-4 flex-1 flex flex-col justify-end">
-                    <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <CardContent className="space-y-3 sm:space-y-4 flex-1 flex flex-col justify-end">
+                    <div className="flex items-center gap-2 sm:gap-3 text-sm text-muted-foreground">
                       <Clock className="h-4 w-4" />
                       <span>{tutorial.estimatedTime} minutes</span>
                     </div>
-                    <div className="space-y-3">
+                    <div className="space-y-2 sm:space-y-3">
                       <h4 className="text-sm font-medium">Quick Steps:</h4>
-                      <ul className="text-xs text-muted-foreground space-y-2">
+                      <ul className="text-xs sm:text-sm text-muted-foreground space-y-1 sm:space-y-2">
                         {tutorial.steps.slice(0, 3).map((step, index) => (
-                          <li key={index} className="flex items-start gap-3">
+                          <li key={index} className="flex items-start gap-2 sm:gap-3">
                             <span className="text-primary">•</span>
                             <span>{step}</span>
                           </li>
@@ -248,13 +248,13 @@ export default function TutorialsPage() {
 
       {/* All Tutorials by Category */}
       <Tabs defaultValue="all" className="space-y-6">
-        <div className="px-4 sm:px-0">
-          <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-3 sm:grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 sm:gap-0">
+        <div className="px-2 sm:px-4 md:px-0">
+          <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-2 sm:gap-3 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 sm:gap-0">
             {categories.map((category) => {
               const Icon = category.icon
               return (
                 <TabsTrigger key={category.key} value={category.key} className="text-xs sm:text-sm">
-                  <Icon className="h-3 w-3 sm:h-4 sm:w-4 mr-2 sm:mr-3" />
+                  <Icon className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 md:mr-3" />
                   <span className="hidden sm:inline">{category.label}</span>
                   <span className="sm:hidden">{category.label.split(' ')[0]}</span>
                   <span className="hidden sm:inline">({category.count})</span>
@@ -267,7 +267,7 @@ export default function TutorialsPage() {
 
         {categories.map((category) => (
           <TabsContent key={category.key} value={category.key} className="space-y-6">
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
               {tutorials
                 .filter(tutorial => category.key === "all" || tutorial.category === category.key)
                 .map((tutorial) => {
@@ -275,9 +275,9 @@ export default function TutorialsPage() {
                   return (
                     <Card key={tutorial.id} className="hover:shadow-md transition-shadow flex flex-col h-full">
                       <CardHeader className="flex-shrink-0">
-                        <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center justify-between mb-3 sm:mb-4">
                           <Icon className="h-5 w-5 text-muted-foreground" />
-                          <div className="flex gap-3">
+                          <div className="flex gap-2 sm:gap-3">
                             {tutorial.isFeatured && (
                               <Badge variant="outline" className="text-yellow-600 border-yellow-600">
                                 <Star className="h-3 w-3 mr-1" />
@@ -289,21 +289,21 @@ export default function TutorialsPage() {
                             </Badge>
                           </div>
                         </div>
-                        <CardTitle className="text-lg mb-3">{tutorial.title}</CardTitle>
-                        <CardDescription className="min-h-[3rem] flex items-start">
+                        <CardTitle className="text-base sm:text-lg mb-2 sm:mb-3">{tutorial.title}</CardTitle>
+                        <CardDescription className="min-h-[3rem] flex items-start text-sm sm:text-base">
                           {tutorial.description}
                         </CardDescription>
                       </CardHeader>
-                      <CardContent className="space-y-4 flex-1 flex flex-col justify-end">
-                        <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                      <CardContent className="space-y-3 sm:space-y-4 flex-1 flex flex-col justify-end">
+                        <div className="flex items-center gap-2 sm:gap-3 text-sm text-muted-foreground">
                           <Clock className="h-4 w-4" />
                           <span>{tutorial.estimatedTime} minutes</span>
                         </div>
-                        <div className="space-y-3">
+                        <div className="space-y-2 sm:space-y-3">
                           <h4 className="text-sm font-medium">Steps:</h4>
-                          <ul className="text-xs text-muted-foreground space-y-2">
+                          <ul className="text-xs sm:text-sm text-muted-foreground space-y-1 sm:space-y-2">
                             {tutorial.steps.slice(0, 2).map((step, index) => (
-                              <li key={index} className="flex items-start gap-3">
+                              <li key={index} className="flex items-start gap-2 sm:gap-3">
                                 <span className="text-primary">•</span>
                                 <span>{step}</span>
                               </li>
@@ -315,7 +315,7 @@ export default function TutorialsPage() {
                             )}
                           </ul>
                         </div>
-                        <div className="flex space-x-3 pt-2">
+                        <div className="flex space-x-2 sm:space-x-3 pt-2">
                           <Button size="sm" className="flex-1">
                             <Play className="h-4 w-4 mr-2" />
                             Start
@@ -338,30 +338,30 @@ export default function TutorialsPage() {
       {/* Quick Help Section */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-3">
+          <CardTitle className="flex items-center gap-2 sm:gap-3">
             <Zap className="h-5 w-5" />
             Need Quick Help?
           </CardTitle>
-          <CardDescription>
+          <CardDescription className="text-sm sm:text-base">
             Get immediate assistance for common issues
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <Button variant="outline" className="h-auto p-6 flex-col">
-              <MessageSquare className="h-6 w-6 mb-3" />
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <Button variant="outline" className="h-auto p-4 sm:p-6 flex-col">
+              <MessageSquare className="h-6 w-6 mb-2 sm:mb-3" />
               <span>Slack Issues</span>
             </Button>
-            <Button variant="outline" className="h-auto p-6 flex-col">
-              <Mail className="h-6 w-6 mb-3" />
+            <Button variant="outline" className="h-auto p-4 sm:p-6 flex-col">
+              <Mail className="h-6 w-6 mb-2 sm:mb-3" />
               <span>Email Problems</span>
             </Button>
-            <Button variant="outline" className="h-auto p-6 flex-col">
-              <CreditCard className="h-6 w-6 mb-3" />
+            <Button variant="outline" className="h-auto p-4 sm:p-6 flex-col">
+              <CreditCard className="h-6 w-6 mb-2 sm:mb-3" />
               <span>Payment Issues</span>
             </Button>
-            <Button variant="outline" className="h-auto p-6 flex-col">
-              <Shield className="h-6 w-6 mb-3" />
+            <Button variant="outline" className="h-auto p-4 sm:p-6 flex-col">
+              <Shield className="h-6 w-6 mb-2 sm:mb-3" />
               <span>Security Help</span>
             </Button>
           </div>

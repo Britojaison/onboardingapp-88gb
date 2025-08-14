@@ -185,23 +185,23 @@ export default function GalleryPage() {
       {/* Featured Gallery */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-3">
+          <CardTitle className="flex items-center gap-2 sm:gap-3">
             <Star className="h-5 w-5 text-yellow-500" />
             Featured Photos
           </CardTitle>
-          <CardDescription>
+          <CardDescription className="text-sm sm:text-base">
             Highlighted moments from our office and events
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featuredItems.map((item) => (
               <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col h-full">
                 <div className="relative">
                   <img
                     src={item.imageUrl}
                     alt={item.title}
-                    className="w-full h-48 object-cover"
+                    className="w-full h-40 sm:h-48 object-cover"
                   />
                   <div className="absolute top-2 right-2">
                     <Badge className="bg-black/50 text-white border-0">
@@ -211,8 +211,8 @@ export default function GalleryPage() {
                   </div>
                 </div>
                 <CardHeader className="pb-3 flex-shrink-0">
-                  <CardTitle className="text-lg mb-3">{item.title}</CardTitle>
-                  <CardDescription className="min-h-[3rem] flex items-start">
+                  <CardTitle className="text-base sm:text-lg mb-2 sm:mb-3">{item.title}</CardTitle>
+                  <CardDescription className="min-h-[3rem] flex items-start text-sm sm:text-base">
                     {item.description}
                   </CardDescription>
                 </CardHeader>
@@ -220,15 +220,15 @@ export default function GalleryPage() {
                   <div className="flex items-center justify-between text-sm text-muted-foreground">
                     <div className="flex items-center gap-2">
                       <MapPin className="h-4 w-4" />
-                      <span>{item.location}</span>
+                      <span className="text-xs sm:text-sm">{item.location}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Calendar className="h-4 w-4" />
-                      <span>{new Date(item.date).toLocaleDateString()}</span>
+                      <span className="text-xs sm:text-sm">{new Date(item.date).toLocaleDateString()}</span>
                     </div>
                   </div>
                   <div className="flex items-center justify-between pt-2">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2 sm:gap-3">
                       <Button size="sm" variant="ghost">
                         <Heart className="h-4 w-4 mr-1" />
                         {item.likes}
@@ -251,13 +251,13 @@ export default function GalleryPage() {
 
       {/* Gallery by Category */}
       <Tabs defaultValue="all" className="space-y-6">
-        <div className="px-4 sm:px-0">
-          <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-3 sm:grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 sm:gap-0">
+        <div className="px-2 sm:px-4 md:px-0">
+          <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-2 sm:gap-3 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 sm:gap-0">
             {categories.map((category) => {
               const Icon = category.icon
               return (
                 <TabsTrigger key={category.key} value={category.key} className="text-xs sm:text-sm">
-                  <Icon className="h-3 w-3 sm:h-4 sm:w-4 mr-2 sm:mr-3" />
+                  <Icon className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 md:mr-3" />
                   <span className="hidden sm:inline">{category.label}</span>
                   <span className="sm:hidden">{category.label.split(' ')[0]}</span>
                   <span className="hidden sm:inline">({category.count})</span>
@@ -270,7 +270,7 @@ export default function GalleryPage() {
 
         {categories.map((category) => (
           <TabsContent key={category.key} value={category.key} className="space-y-6">
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {galleryItems
                 .filter(item => category.key === "all" || item.category === category.key)
                 .map((item) => (
@@ -279,7 +279,7 @@ export default function GalleryPage() {
                       <img
                         src={item.imageUrl}
                         alt={item.title}
-                        className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-200"
+                        className="w-full h-32 sm:h-40 object-cover group-hover:scale-105 transition-transform duration-200"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-200" />
                       <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
@@ -288,10 +288,10 @@ export default function GalleryPage() {
                         </Button>
                       </div>
                     </div>
-                    <CardContent className="p-4 flex-1 flex flex-col justify-end">
-                      <div className="space-y-3">
+                    <CardContent className="p-3 sm:p-4 flex-1 flex flex-col justify-end">
+                      <div className="space-y-2 sm:space-y-3">
                         <h3 className="font-semibold text-sm line-clamp-1">{item.title}</h3>
-                        <p className="text-xs text-muted-foreground line-clamp-2 min-h-[2.5rem] flex items-start">
+                        <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2 min-h-[2.5rem] flex items-start">
                           {item.description}
                         </p>
                         <div className="flex items-center justify-between text-xs text-muted-foreground pt-2">
@@ -316,19 +316,19 @@ export default function GalleryPage() {
       {/* Upload Section */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-3">
+          <CardTitle className="flex items-center gap-2 sm:gap-3">
             <Camera className="h-5 w-5" />
             Share Your Photos
           </CardTitle>
-          <CardDescription>
+          <CardDescription className="text-sm sm:text-base">
             Contribute to our gallery by sharing your office moments
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center">
-            <Camera className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-            <h3 className="text-lg font-semibold mb-3">Upload Photos</h3>
-            <p className="text-muted-foreground mb-6">
+          <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-6 sm:p-8 text-center">
+            <Camera className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-muted-foreground mb-3 sm:mb-4" />
+            <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">Upload Photos</h3>
+            <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
               Share photos of office events, team activities, or workplace moments
             </p>
             <Button>

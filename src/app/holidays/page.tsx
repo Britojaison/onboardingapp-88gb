@@ -144,8 +144,8 @@ export default function HolidaysPage() {
       </div>
 
       <Tabs defaultValue="holidays" className="space-y-6">
-        <div className="px-4 sm:px-0">
-          <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-3 sm:grid sm:grid-cols-2 sm:gap-0">
+        <div className="px-2 sm:px-4 md:px-0">
+          <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-2 sm:gap-3 sm:grid sm:grid-cols-2 sm:gap-0">
             <TabsTrigger value="holidays" className="text-xs sm:text-sm">Holidays</TabsTrigger>
             <TabsTrigger value="office" className="text-xs sm:text-sm">Office Information</TabsTrigger>
           </TabsList>
@@ -155,29 +155,29 @@ export default function HolidaysPage() {
           {/* Upcoming Holidays */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-3">
+              <CardTitle className="flex items-center gap-2 sm:gap-3">
                 <Calendar className="h-5 w-5" />
                 Upcoming Holidays
               </CardTitle>
-              <CardDescription>
+              <CardDescription className="text-sm sm:text-base">
                 Next 5 upcoming holidays
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {upcomingHolidays.map((holiday) => (
-                  <div key={holiday.id} className="flex items-center justify-between p-4 border rounded-lg">
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-3">
-                        <h3 className="font-semibold">{holiday.name}</h3>
+                  <div key={holiday.id} className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 border rounded-lg gap-2 sm:gap-0">
+                    <div className="space-y-1 sm:space-y-2">
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        <h3 className="font-semibold text-sm sm:text-base">{holiday.name}</h3>
                         <Badge className={getHolidayTypeColor(holiday.type)}>
                           {holiday.type}
                         </Badge>
                       </div>
                       <p className="text-sm text-muted-foreground">{holiday.description}</p>
                     </div>
-                    <div className="text-right">
-                      <div className="font-medium">
+                    <div className="text-left sm:text-right">
+                      <div className="font-medium text-sm sm:text-base">
                         {new Date(holiday.date).toLocaleDateString('en-US', {
                           weekday: 'long',
                           year: 'numeric',
@@ -185,7 +185,7 @@ export default function HolidaysPage() {
                           day: 'numeric'
                         })}
                       </div>
-                      <div className="text-sm text-muted-foreground">
+                      <div className="text-xs sm:text-sm text-muted-foreground">
                         {Math.ceil((new Date(holiday.date).getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24))} days away
                       </div>
                     </div>
@@ -198,17 +198,17 @@ export default function HolidaysPage() {
           {/* All Holidays */}
           <Card>
             <CardHeader>
-              <CardTitle>All Holidays 2024</CardTitle>
-              <CardDescription>
+              <CardTitle className="text-base sm:text-lg">All Holidays 2024</CardTitle>
+              <CardDescription className="text-sm sm:text-base">
                 Complete list of company holidays for the year
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {holidays.map((holiday) => (
                   <Card key={holiday.id} className="hover:shadow-md transition-shadow flex flex-col h-full">
-                    <CardHeader className="pb-4 flex flex-col flex-1">
-                      <div className="flex items-center justify-between mb-4">
+                    <CardHeader className="pb-3 sm:pb-4 flex flex-col flex-1">
+                      <div className="flex items-center justify-between mb-3 sm:mb-4">
                         <Badge className={getHolidayTypeColor(holiday.type)}>
                           {holiday.type}
                         </Badge>
@@ -216,11 +216,11 @@ export default function HolidaysPage() {
                           <Badge variant="outline">Floating</Badge>
                         )}
                       </div>
-                      <CardTitle className="text-lg mb-3">{holiday.name}</CardTitle>
-                      <CardDescription className="flex-1">{holiday.description}</CardDescription>
+                      <CardTitle className="text-base sm:text-lg mb-2 sm:mb-3">{holiday.name}</CardTitle>
+                      <CardDescription className="flex-1 text-sm sm:text-base">{holiday.description}</CardDescription>
                     </CardHeader>
                     <CardContent className="mt-auto pt-0">
-                      <div className="text-sm font-medium">
+                      <div className="text-sm sm:text-base font-medium">
                         {new Date(holiday.date).toLocaleDateString('en-US', {
                           weekday: 'long',
                           year: 'numeric',

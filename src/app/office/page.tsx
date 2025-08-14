@@ -189,8 +189,8 @@ export default function OfficePage() {
       </div>
 
       <Tabs defaultValue="overview" className="space-y-6">
-        <div className="px-4 sm:px-0">
-          <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-3 sm:grid sm:grid-cols-3 sm:gap-0">
+        <div className="px-2 sm:px-4 md:px-0">
+          <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-2 sm:gap-3 sm:grid sm:grid-cols-2 md:grid-cols-3 sm:gap-0">
             <TabsTrigger value="overview" className="text-xs sm:text-sm">Overview</TabsTrigger>
             <TabsTrigger value="facilities" className="text-xs sm:text-sm">Facilities</TabsTrigger>
             <TabsTrigger value="departments" className="text-xs sm:text-sm">Departments</TabsTrigger>
@@ -201,41 +201,41 @@ export default function OfficePage() {
           {/* Office Location */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-3">
+              <CardTitle className="flex items-center gap-2 sm:gap-3">
                 <Building2 className="h-5 w-5" />
                 {officeInfo.mainOffice.name}
               </CardTitle>
-              <CardDescription>
+              <CardDescription className="text-sm sm:text-base">
                 Our main office location and contact details
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid gap-6 md:grid-cols-2">
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
+            <CardContent className="space-y-4 sm:space-y-6">
+              <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex items-start gap-2 sm:gap-3">
                     <MapPin className="h-5 w-5 text-muted-foreground mt-0.5" />
                     <div>
-                      <h3 className="font-medium">Address</h3>
+                      <h3 className="font-medium text-sm sm:text-base">Address</h3>
                       <p className="text-sm text-muted-foreground">{officeInfo.mainOffice.address}</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2 sm:gap-3">
                     <Phone className="h-5 w-5 text-muted-foreground" />
                     <div>
-                      <h3 className="font-medium">Phone</h3>
+                      <h3 className="font-medium text-sm sm:text-base">Phone</h3>
                       <p className="text-sm text-muted-foreground">{officeInfo.mainOffice.phone}</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2 sm:gap-3">
                     <Mail className="h-5 w-5 text-muted-foreground" />
                     <div>
-                      <h3 className="font-medium">Email</h3>
+                      <h3 className="font-medium text-sm sm:text-base">Email</h3>
                       <p className="text-sm text-muted-foreground">{officeInfo.mainOffice.email}</p>
                     </div>
                   </div>
                 </div>
-                <div className="space-y-4">
-                  <h3 className="font-medium">Working Hours</h3>
+                <div className="space-y-3 sm:space-y-4">
+                  <h3 className="font-medium text-sm sm:text-base">Working Hours</h3>
                   <div className="space-y-2">
                     {Object.entries(officeInfo.mainOffice.workingHours).map(([day, hours]) => (
                       <div key={day} className="flex justify-between text-sm">
@@ -246,12 +246,12 @@ export default function OfficePage() {
                   </div>
                 </div>
               </div>
-              <div className="flex gap-4">
-                <Button>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <Button className="w-full sm:w-auto">
                   <MapPin className="h-4 w-4 mr-2" />
                   Get Directions
                 </Button>
-                <Button variant="outline">
+                <Button variant="outline" className="w-full sm:w-auto">
                   <Phone className="h-4 w-4 mr-2" />
                   Call Office
                 </Button>
@@ -260,9 +260,9 @@ export default function OfficePage() {
           </Card>
 
           {/* Quick Stats */}
-          <div className="grid gap-6 md:grid-cols-4">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 sm:pb-3">
                 <CardTitle className="text-sm font-medium">Total Floors</CardTitle>
                 <Building2 className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
@@ -272,7 +272,7 @@ export default function OfficePage() {
               </CardContent>
             </Card>
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 sm:pb-3">
                 <CardTitle className="text-sm font-medium">Facilities</CardTitle>
                 <Zap className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
@@ -282,7 +282,7 @@ export default function OfficePage() {
               </CardContent>
             </Card>
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 sm:pb-3">
                 <CardTitle className="text-sm font-medium">Departments</CardTitle>
                 <Users className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
@@ -292,7 +292,7 @@ export default function OfficePage() {
               </CardContent>
             </Card>
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 sm:pb-3">
                 <CardTitle className="text-sm font-medium">Parking</CardTitle>
                 <Car className="h-4 w-4 text-muted-foreground" />
               </CardHeader>

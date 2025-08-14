@@ -78,14 +78,26 @@ export function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center space-x-4">
-            <Link href="/" className="flex items-center space-x-2">
-              <Building2 className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold">Employee Portal</span>
+            {/* Desktop: Employee Portal, Mobile/Tablet: 88GB Logo */}
+            <Link href="/" className="flex items-center space-x-3">
+              <div className="hidden lg:flex items-center space-x-3">
+                <Building2 className="h-8 w-8 text-primary" />
+                <span className="text-xl font-bold">Employee Portal</span>
+              </div>
+              <div className="lg:hidden">
+                <Image
+                  src="/88gb.png"
+                  alt="88GB Logo"
+                  width={40}
+                  height={40}
+                  className="h-10 w-auto"
+                />
+              </div>
             </Link>
           </div>
 
-          {/* Desktop Navigation - Hidden on mobile */}
-          <NavigationMenu className="hidden md:flex">
+          {/* Desktop Navigation - Hidden on mobile/tablet */}
+          <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList>
               {navigationItems.map((item) => {
                 const Icon = item.icon
@@ -108,19 +120,35 @@ export function Navigation() {
           </NavigationMenu>
 
           <div className="flex items-center space-x-4">
-            {/* Mobile Menu Button */}
+            {/* Desktop: 88GB Logo on the right */}
+            <div className="hidden lg:flex items-center">
+              <Image
+                src="/88gb.png"
+                alt="88GB Logo"
+                width={40}
+                height={40}
+                className="h-10 w-auto"
+              />
+            </div>
+
+            {/* Mobile/Tablet Menu Button */}
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden">
+                <Button variant="ghost" size="icon" className="lg:hidden">
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               </SheetTrigger>
               <SheetContent side="left" className="w-[300px] sm:w-[400px]">
                 <nav className="flex flex-col gap-4">
-                  <div className="flex items-center space-x-2 py-4">
-                    <Building2 className="h-8 w-8 text-primary" />
-                    <span className="text-xl font-bold">Employee Portal</span>
+                  <div className="flex items-center justify-center py-4">
+                    <Image
+                      src="/88gb.png"
+                      alt="88GB Logo"
+                      width={48}
+                      height={48}
+                      className="h-12 w-auto"
+                    />
                   </div>
                   {navigationItems.map((item) => {
                     const Icon = item.icon
@@ -142,17 +170,6 @@ export function Navigation() {
                 </nav>
               </SheetContent>
             </Sheet>
-
-            {/* 88GB Logo */}
-            <div className="flex items-center">
-              <Image
-                src="/88gb.png"
-                alt="88GB Logo"
-                width={40}
-                height={40}
-                className="h-10 w-auto"
-              />
-            </div>
           </div>
         </div>
       </div>

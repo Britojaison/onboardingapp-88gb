@@ -84,20 +84,20 @@ export default function HomePage() {
       </div>
 
       {/* Quick Access Cards */}
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {quickActions.map((action) => {
           const Icon = action.icon
           return (
             <Card key={action.title} className="hover:shadow-md transition-shadow flex flex-col h-full">
-              <CardHeader className="pb-4">
+              <CardHeader className="pb-3 sm:pb-4">
                 <div className={`w-10 h-10 rounded-lg ${action.color} flex items-center justify-center`}>
                   <Icon className="h-5 w-5 text-white" />
                 </div>
               </CardHeader>
               <CardContent className="flex flex-col flex-1">
-                <CardTitle className="text-lg mb-3">{action.title}</CardTitle>
-                <CardDescription className="mt-2 flex-1">{action.description}</CardDescription>
-                <Button asChild className="mt-6 w-full mt-auto">
+                <CardTitle className="text-base sm:text-lg mb-2 sm:mb-3">{action.title}</CardTitle>
+                <CardDescription className="mt-2 flex-1 mb-3 sm:mb-4 text-sm sm:text-base">{action.description}</CardDescription>
+                <Button asChild className="w-full mt-auto">
                   <a href={action.href}>Access</a>
                 </Button>
               </CardContent>
@@ -107,20 +107,20 @@ export default function HomePage() {
       </div>
 
       {/* Additional Resources */}
-      <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+      <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2">
         {additionalResources.map((resource) => {
           const Icon = resource.icon
           return (
             <Card key={resource.title} className="hover:shadow-md transition-shadow flex flex-col h-full">
-              <CardHeader className="pb-4">
+              <CardHeader className="pb-3 sm:pb-4">
                 <div className={`w-10 h-10 rounded-lg ${resource.color} flex items-center justify-center`}>
                   <Icon className="h-5 w-5 text-white" />
                 </div>
               </CardHeader>
               <CardContent className="flex flex-col flex-1">
-                <CardTitle className="text-lg mb-3">{resource.title}</CardTitle>
-                <CardDescription className="mt-2 flex-1">{resource.description}</CardDescription>
-                <Button asChild className="mt-6 w-full mt-auto">
+                <CardTitle className="text-base sm:text-lg mb-2 sm:mb-3">{resource.title}</CardTitle>
+                <CardDescription className="mt-2 flex-1 mb-3 sm:mb-4 text-sm sm:text-base">{resource.description}</CardDescription>
+                <Button asChild className="w-full mt-auto">
                   <a href={resource.href}>View</a>
                 </Button>
               </CardContent>
@@ -130,44 +130,44 @@ export default function HomePage() {
       </div>
 
       {/* Company Information */}
-      <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+      <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2">
         <Card>
           <CardHeader>
-            <CardTitle>Company Overview</CardTitle>
-            <CardDescription>Essential information about our organization</CardDescription>
+            <CardTitle className="text-base sm:text-lg">Company Overview</CardTitle>
+            <CardDescription className="text-sm sm:text-base">Essential information about our organization</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex items-center gap-3">
+          <CardContent className="space-y-3 sm:space-y-4">
+            <div className="flex items-center gap-2 sm:gap-3">
               <Users className="h-4 w-4 text-muted-foreground" />
-              <span className="text-sm">Employee-focused company culture</span>
+              <span className="text-sm sm:text-base">Employee-focused company culture</span>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <Clock className="h-4 w-4 text-muted-foreground" />
-              <span className="text-sm">Standard business hours: 9:00 AM - 6:00 PM</span>
+              <span className="text-sm sm:text-base">Standard business hours: 9:00 AM - 6:00 PM</span>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <Building2 className="h-4 w-4 text-muted-foreground" />
-              <span className="text-sm">Modern office facilities with collaborative spaces</span>
+              <span className="text-sm sm:text-base">Modern office facilities with collaborative spaces</span>
             </div>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
-            <CardTitle>Upcoming Holidays</CardTitle>
-            <CardDescription>Plan your time accordingly</CardDescription>
+            <CardTitle className="text-base sm:text-lg">Upcoming Holidays</CardTitle>
+            <CardDescription className="text-sm sm:text-base">Plan your time accordingly</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-3 sm:space-y-4">
             {upcomingHolidays.map((holiday, index) => (
               <div key={index} className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium">{holiday.name}</p>
-                  <p className="text-xs text-muted-foreground">{holiday.date}</p>
+                  <p className="text-sm sm:text-base font-medium">{holiday.name}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">{holiday.date}</p>
                 </div>
                 <Badge variant="secondary">{holiday.type}</Badge>
               </div>
             ))}
-            <Button variant="outline" className="w-full mt-4" asChild>
+            <Button variant="outline" className="w-full mt-3 sm:mt-4" asChild>
               <a href="/holidays">View All Holidays</a>
             </Button>
           </CardContent>
