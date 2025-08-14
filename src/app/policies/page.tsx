@@ -149,7 +149,7 @@ export default function PoliciesPage() {
 
   return (
     <div className="space-y-8">
-      <div className="space-y-2">
+      <div className="space-y-3">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Policies</h1>
         <p className="text-muted-foreground text-base md:text-lg">
           Review and download important company policies.
@@ -166,15 +166,15 @@ export default function PoliciesPage() {
       </div>
 
       {/* Policy Categories */}
-      <Tabs defaultValue="all" className="space-y-4">
+      <Tabs defaultValue="all" className="space-y-6">
         <div className="px-4 sm:px-0">
-          <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-2 sm:grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 sm:gap-0">
+          <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-3 sm:grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 sm:gap-0">
             <TabsTrigger value="all" className="text-xs sm:text-sm">All ({policies.length})</TabsTrigger>
             {categories.map((category) => {
               const Icon = category.icon
               return (
                 <TabsTrigger key={category.key} value={category.key} className="text-xs sm:text-sm">
-                  <Icon className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+                  <Icon className="h-3 w-3 sm:h-4 sm:w-4 mr-2 sm:mr-3" />
                   <span className="hidden sm:inline">{category.label}</span>
                   <span className="sm:hidden">{category.label.split(' ')[0]}</span>
                   <span className="hidden sm:inline">({category.count})</span>
@@ -185,24 +185,24 @@ export default function PoliciesPage() {
           </TabsList>
         </div>
 
-        <TabsContent value="all" className="space-y-4">
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <TabsContent value="all" className="space-y-6">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {policies.map((policy) => {
               const Icon = getCategoryIcon(policy.category)
               return (
                 <Card key={policy.id} className="hover:shadow-md transition-shadow flex flex-col h-full">
-                  <CardHeader className="flex flex-col flex-1">
-                    <div className="flex items-center justify-between">
+                  <CardHeader className="flex flex-col flex-1 pb-4">
+                    <div className="flex items-center justify-between mb-4">
                       <Icon className="h-5 w-5 text-muted-foreground" />
                       <Badge className={getCategoryColor(policy.category)}>
                         {policy.category.toUpperCase()}
                       </Badge>
                     </div>
-                    <CardTitle className="text-lg">{policy.title}</CardTitle>
+                    <CardTitle className="text-lg mb-3">{policy.title}</CardTitle>
                     <CardDescription className="flex-1">{policy.description}</CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-4 mt-auto">
-                    <div className="space-y-2 text-sm text-muted-foreground">
+                  <CardContent className="space-y-4 mt-auto pt-0">
+                    <div className="space-y-3 text-sm text-muted-foreground">
                       <div className="flex justify-between">
                         <span>Version:</span>
                         <span className="font-medium">{policy.version}</span>
@@ -220,7 +220,7 @@ export default function PoliciesPage() {
                         <span>{policy.fileSize}</span>
                       </div>
                     </div>
-                    <div className="flex space-x-2">
+                    <div className="flex space-x-3 pt-2">
                       <Button 
                         size="sm" 
                         className="flex-1"
@@ -250,26 +250,26 @@ export default function PoliciesPage() {
         </TabsContent>
 
         {categories.map((category) => (
-          <TabsContent key={category.key} value={category.key} className="space-y-4">
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <TabsContent key={category.key} value={category.key} className="space-y-6">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {policies
                 .filter(policy => policy.category === category.key)
                 .map((policy) => {
                   const Icon = getCategoryIcon(policy.category)
                   return (
                     <Card key={policy.id} className="hover:shadow-md transition-shadow flex flex-col h-full">
-                      <CardHeader className="flex flex-col flex-1">
-                        <div className="flex items-center justify-between">
+                      <CardHeader className="flex flex-col flex-1 pb-4">
+                        <div className="flex items-center justify-between mb-4">
                           <Icon className="h-5 w-5 text-muted-foreground" />
                           <Badge className={getCategoryColor(policy.category)}>
                             {policy.category.toUpperCase()}
                           </Badge>
                         </div>
-                        <CardTitle className="text-lg">{policy.title}</CardTitle>
+                        <CardTitle className="text-lg mb-3">{policy.title}</CardTitle>
                         <CardDescription className="flex-1">{policy.description}</CardDescription>
                       </CardHeader>
-                      <CardContent className="space-y-4 mt-auto">
-                        <div className="space-y-2 text-sm text-muted-foreground">
+                      <CardContent className="space-y-4 mt-auto pt-0">
+                        <div className="space-y-3 text-sm text-muted-foreground">
                           <div className="flex justify-between">
                             <span>Version:</span>
                             <span className="font-medium">{policy.version}</span>
@@ -287,7 +287,7 @@ export default function PoliciesPage() {
                             <span>{policy.fileSize}</span>
                           </div>
                         </div>
-                        <div className="flex space-x-2">
+                        <div className="flex space-x-3 pt-2">
                           <Button 
                             size="sm" 
                             className="flex-1"

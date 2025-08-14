@@ -181,20 +181,19 @@ export default function OfficePage() {
 
   return (
     <div className="space-y-8">
-      <div className="space-y-2">
+      <div className="space-y-3">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Office Information</h1>
         <p className="text-muted-foreground text-base md:text-lg">
-          Complete guide to our office facilities, departments, and contact information.
+          Everything you need to know about our office location, facilities, and amenities.
         </p>
       </div>
 
       <Tabs defaultValue="overview" className="space-y-6">
         <div className="px-4 sm:px-0">
-          <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-2 sm:grid sm:grid-cols-4 sm:gap-0">
+          <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-3 sm:grid sm:grid-cols-3 sm:gap-0">
             <TabsTrigger value="overview" className="text-xs sm:text-sm">Overview</TabsTrigger>
             <TabsTrigger value="facilities" className="text-xs sm:text-sm">Facilities</TabsTrigger>
             <TabsTrigger value="departments" className="text-xs sm:text-sm">Departments</TabsTrigger>
-            <TabsTrigger value="emergency" className="text-xs sm:text-sm">Emergency</TabsTrigger>
           </TabsList>
         </div>
 
@@ -202,7 +201,7 @@ export default function OfficePage() {
           {/* Office Location */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex items-center gap-3">
                 <Building2 className="h-5 w-5" />
                 {officeInfo.mainOffice.name}
               </CardTitle>
@@ -261,9 +260,9 @@ export default function OfficePage() {
           </Card>
 
           {/* Quick Stats */}
-          <div className="grid gap-4 md:grid-cols-4">
+          <div className="grid gap-6 md:grid-cols-4">
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
                 <CardTitle className="text-sm font-medium">Total Floors</CardTitle>
                 <Building2 className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
@@ -273,7 +272,7 @@ export default function OfficePage() {
               </CardContent>
             </Card>
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
                 <CardTitle className="text-sm font-medium">Facilities</CardTitle>
                 <Zap className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
@@ -283,7 +282,7 @@ export default function OfficePage() {
               </CardContent>
             </Card>
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
                 <CardTitle className="text-sm font-medium">Departments</CardTitle>
                 <Users className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
@@ -293,13 +292,13 @@ export default function OfficePage() {
               </CardContent>
             </Card>
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
                 <CardTitle className="text-sm font-medium">Parking</CardTitle>
                 <Car className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">200+</div>
-                <p className="text-xs text-muted-foreground">Parking spaces</p>
+                <div className="text-2xl font-bold">50+</div>
+                <p className="text-xs text-muted-foreground">Parking spots</p>
               </CardContent>
             </Card>
           </div>

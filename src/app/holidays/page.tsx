@@ -136,16 +136,16 @@ export default function HolidaysPage() {
 
   return (
     <div className="space-y-8">
-      <div className="space-y-2">
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Holidays</h1>
+      <div className="space-y-3">
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Holidays & Office Info</h1>
         <p className="text-muted-foreground text-base md:text-lg">
-          View upcoming holidays and company events.
+          View company holidays and office information.
         </p>
       </div>
 
       <Tabs defaultValue="holidays" className="space-y-6">
         <div className="px-4 sm:px-0">
-          <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-2 sm:grid sm:grid-cols-2 sm:gap-0">
+          <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-3 sm:grid sm:grid-cols-2 sm:gap-0">
             <TabsTrigger value="holidays" className="text-xs sm:text-sm">Holidays</TabsTrigger>
             <TabsTrigger value="office" className="text-xs sm:text-sm">Office Information</TabsTrigger>
           </TabsList>
@@ -155,7 +155,7 @@ export default function HolidaysPage() {
           {/* Upcoming Holidays */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex items-center gap-3">
                 <Calendar className="h-5 w-5" />
                 Upcoming Holidays
               </CardTitle>
@@ -167,8 +167,8 @@ export default function HolidaysPage() {
               <div className="space-y-4">
                 {upcomingHolidays.map((holiday) => (
                   <div key={holiday.id} className="flex items-center justify-between p-4 border rounded-lg">
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-2">
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-3">
                         <h3 className="font-semibold">{holiday.name}</h3>
                         <Badge className={getHolidayTypeColor(holiday.type)}>
                           {holiday.type}
@@ -204,11 +204,11 @@ export default function HolidaysPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {holidays.map((holiday) => (
                   <Card key={holiday.id} className="hover:shadow-md transition-shadow flex flex-col h-full">
-                    <CardHeader className="pb-3 flex flex-col flex-1">
-                      <div className="flex items-center justify-between">
+                    <CardHeader className="pb-4 flex flex-col flex-1">
+                      <div className="flex items-center justify-between mb-4">
                         <Badge className={getHolidayTypeColor(holiday.type)}>
                           {holiday.type}
                         </Badge>
@@ -216,10 +216,10 @@ export default function HolidaysPage() {
                           <Badge variant="outline">Floating</Badge>
                         )}
                       </div>
-                      <CardTitle className="text-lg">{holiday.name}</CardTitle>
+                      <CardTitle className="text-lg mb-3">{holiday.name}</CardTitle>
                       <CardDescription className="flex-1">{holiday.description}</CardDescription>
                     </CardHeader>
-                    <CardContent className="mt-auto">
+                    <CardContent className="mt-auto pt-0">
                       <div className="text-sm font-medium">
                         {new Date(holiday.date).toLocaleDateString('en-US', {
                           weekday: 'long',
@@ -241,7 +241,7 @@ export default function HolidaysPage() {
           <div className="grid gap-6 md:grid-cols-2">
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+                <CardTitle className="flex items-center gap-3">
                   <MapPin className="h-5 w-5" />
                   Office Location
                 </CardTitle>

@@ -76,7 +76,7 @@ const upcomingHolidays = [
 export default function HomePage() {
   return (
     <div className="space-y-8">
-      <div className="space-y-2">
+      <div className="space-y-3">
         <h1 className="text-3xl font-bold tracking-tight">Employee Portal</h1>
         <p className="text-muted-foreground">
           Welcome to your central hub for company information, policies, and resources.
@@ -84,20 +84,20 @@ export default function HomePage() {
       </div>
 
       {/* Quick Access Cards */}
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {quickActions.map((action) => {
           const Icon = action.icon
           return (
             <Card key={action.title} className="hover:shadow-md transition-shadow flex flex-col h-full">
-              <CardHeader className="pb-3">
+              <CardHeader className="pb-4">
                 <div className={`w-10 h-10 rounded-lg ${action.color} flex items-center justify-center`}>
                   <Icon className="h-5 w-5 text-white" />
                 </div>
               </CardHeader>
               <CardContent className="flex flex-col flex-1">
-                <CardTitle className="text-lg">{action.title}</CardTitle>
+                <CardTitle className="text-lg mb-3">{action.title}</CardTitle>
                 <CardDescription className="mt-2 flex-1">{action.description}</CardDescription>
-                <Button asChild className="mt-4 w-full mt-auto">
+                <Button asChild className="mt-6 w-full mt-auto">
                   <a href={action.href}>Access</a>
                 </Button>
               </CardContent>
@@ -107,20 +107,20 @@ export default function HomePage() {
       </div>
 
       {/* Additional Resources */}
-      <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
+      <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
         {additionalResources.map((resource) => {
           const Icon = resource.icon
           return (
             <Card key={resource.title} className="hover:shadow-md transition-shadow flex flex-col h-full">
-              <CardHeader className="pb-3">
+              <CardHeader className="pb-4">
                 <div className={`w-10 h-10 rounded-lg ${resource.color} flex items-center justify-center`}>
                   <Icon className="h-5 w-5 text-white" />
                 </div>
               </CardHeader>
               <CardContent className="flex flex-col flex-1">
-                <CardTitle className="text-lg">{resource.title}</CardTitle>
+                <CardTitle className="text-lg mb-3">{resource.title}</CardTitle>
                 <CardDescription className="mt-2 flex-1">{resource.description}</CardDescription>
-                <Button asChild className="mt-4 w-full mt-auto">
+                <Button asChild className="mt-6 w-full mt-auto">
                   <a href={resource.href}>View</a>
                 </Button>
               </CardContent>
@@ -130,7 +130,7 @@ export default function HomePage() {
       </div>
 
       {/* Company Information */}
-      <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
+      <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle>Company Overview</CardTitle>
@@ -167,7 +167,7 @@ export default function HomePage() {
                 <Badge variant="secondary">{holiday.type}</Badge>
               </div>
             ))}
-            <Button variant="outline" className="w-full" asChild>
+            <Button variant="outline" className="w-full mt-4" asChild>
               <a href="/holidays">View All Holidays</a>
             </Button>
           </CardContent>

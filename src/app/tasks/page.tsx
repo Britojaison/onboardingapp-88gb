@@ -117,7 +117,7 @@ export default function TasksPage() {
 
   return (
     <div className="space-y-8">
-      <div className="space-y-2">
+      <div className="space-y-3">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Tasks & Procedures</h1>
         <p className="text-muted-foreground text-base md:text-lg">
           Access company procedures, guidelines, and setup instructions below.
@@ -125,9 +125,9 @@ export default function TasksPage() {
       </div>
 
       {/* Summary Cards */}
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-sm font-medium">Total Procedures</CardTitle>
             <FileText className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
@@ -136,7 +136,7 @@ export default function TasksPage() {
           </CardContent>
         </Card>
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-sm font-medium">Account Setup</CardTitle>
             <Settings className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
@@ -145,7 +145,7 @@ export default function TasksPage() {
           </CardContent>
         </Card>
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-sm font-medium">Training</CardTitle>
             <Shield className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
@@ -156,9 +156,9 @@ export default function TasksPage() {
       </div>
 
       {/* Tasks by Category */}
-      <Tabs defaultValue="all" className="space-y-4">
+      <Tabs defaultValue="all" className="space-y-6">
         <div className="px-4 sm:px-0">
-          <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-2 sm:grid sm:grid-cols-6 sm:gap-0">
+          <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-3 sm:grid sm:grid-cols-6 sm:gap-0">
             {categories.map((category) => (
               <TabsTrigger key={category.id} value={category.id} className="text-xs sm:text-sm">
                 {category.name} ({category.count})
@@ -168,8 +168,8 @@ export default function TasksPage() {
         </div>
 
         {categories.map((category) => (
-          <TabsContent key={category.id} value={category.id} className="space-y-4">
-            <div className="grid gap-4">
+          <TabsContent key={category.id} value={category.id} className="space-y-6">
+            <div className="grid gap-6">
               {tasks
                 .filter(task => category.id === "all" || task.category === category.id)
                 .map((task) => {
@@ -183,8 +183,8 @@ export default function TasksPage() {
                             <div className="mt-1 flex-shrink-0">
                               <Icon className="h-5 w-5 text-muted-foreground" />
                             </div>
-                            <div className="space-y-1 flex-1 min-w-0">
-                              <div className="flex items-center space-x-2">
+                            <div className="space-y-2 flex-1 min-w-0">
+                              <div className="flex items-center space-x-3">
                                 <h3 className="font-semibold">{task.title}</h3>
                                 <Badge className={getCategoryColor(task.category)}>
                                   {task.category.replace("_", " ")}

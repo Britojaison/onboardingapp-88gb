@@ -166,7 +166,7 @@ export default function GalleryPage() {
 
   return (
     <div className="space-y-8">
-      <div className="space-y-2">
+      <div className="space-y-3">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Gallery</h1>
         <p className="text-muted-foreground text-base md:text-lg">
           Explore photos from our office and events.
@@ -185,7 +185,7 @@ export default function GalleryPage() {
       {/* Featured Gallery */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex items-center gap-3">
             <Star className="h-5 w-5 text-yellow-500" />
             Featured Photos
           </CardTitle>
@@ -210,23 +210,25 @@ export default function GalleryPage() {
                     </Badge>
                   </div>
                 </div>
-                <CardHeader className="pb-3 flex flex-col flex-1">
-                  <CardTitle className="text-lg">{item.title}</CardTitle>
-                  <CardDescription className="flex-1">{item.description}</CardDescription>
+                <CardHeader className="pb-3 flex-shrink-0">
+                  <CardTitle className="text-lg mb-3">{item.title}</CardTitle>
+                  <CardDescription className="min-h-[3rem] flex items-start">
+                    {item.description}
+                  </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-3 mt-auto">
+                <CardContent className="space-y-3 flex-1 flex flex-col justify-end">
                   <div className="flex items-center justify-between text-sm text-muted-foreground">
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-2">
                       <MapPin className="h-4 w-4" />
                       <span>{item.location}</span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-2">
                       <Calendar className="h-4 w-4" />
                       <span>{new Date(item.date).toLocaleDateString()}</span>
                     </div>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
+                  <div className="flex items-center justify-between pt-2">
+                    <div className="flex items-center gap-3">
                       <Button size="sm" variant="ghost">
                         <Heart className="h-4 w-4 mr-1" />
                         {item.likes}
@@ -248,14 +250,14 @@ export default function GalleryPage() {
       </Card>
 
       {/* Gallery by Category */}
-      <Tabs defaultValue="all" className="space-y-4">
+      <Tabs defaultValue="all" className="space-y-6">
         <div className="px-4 sm:px-0">
-          <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-2 sm:grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 sm:gap-0">
+          <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-3 sm:grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 sm:gap-0">
             {categories.map((category) => {
               const Icon = category.icon
               return (
                 <TabsTrigger key={category.key} value={category.key} className="text-xs sm:text-sm">
-                  <Icon className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+                  <Icon className="h-3 w-3 sm:h-4 sm:w-4 mr-2 sm:mr-3" />
                   <span className="hidden sm:inline">{category.label}</span>
                   <span className="sm:hidden">{category.label.split(' ')[0]}</span>
                   <span className="hidden sm:inline">({category.count})</span>
@@ -267,8 +269,8 @@ export default function GalleryPage() {
         </div>
 
         {categories.map((category) => (
-          <TabsContent key={category.key} value={category.key} className="space-y-4">
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <TabsContent key={category.key} value={category.key} className="space-y-6">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {galleryItems
                 .filter(item => category.key === "all" || item.category === category.key)
                 .map((item) => (
@@ -286,16 +288,18 @@ export default function GalleryPage() {
                         </Button>
                       </div>
                     </div>
-                    <CardContent className="p-4 flex flex-col flex-1">
-                      <div className="space-y-2 flex-1">
+                    <CardContent className="p-4 flex-1 flex flex-col justify-end">
+                      <div className="space-y-3">
                         <h3 className="font-semibold text-sm line-clamp-1">{item.title}</h3>
-                        <p className="text-xs text-muted-foreground line-clamp-2">{item.description}</p>
-                        <div className="flex items-center justify-between text-xs text-muted-foreground">
-                          <div className="flex items-center gap-1">
+                        <p className="text-xs text-muted-foreground line-clamp-2 min-h-[2.5rem] flex items-start">
+                          {item.description}
+                        </p>
+                        <div className="flex items-center justify-between text-xs text-muted-foreground pt-2">
+                          <div className="flex items-center gap-2">
                             <MapPin className="h-3 w-3" />
                             <span className="truncate">{item.location}</span>
                           </div>
-                          <div className="flex items-center gap-1">
+                          <div className="flex items-center gap-2">
                             <Heart className="h-3 w-3" />
                             <span>{item.likes}</span>
                           </div>
@@ -312,7 +316,7 @@ export default function GalleryPage() {
       {/* Upload Section */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex items-center gap-3">
             <Camera className="h-5 w-5" />
             Share Your Photos
           </CardTitle>
@@ -323,8 +327,8 @@ export default function GalleryPage() {
         <CardContent>
           <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center">
             <Camera className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Upload Photos</h3>
-            <p className="text-muted-foreground mb-4">
+            <h3 className="text-lg font-semibold mb-3">Upload Photos</h3>
+            <p className="text-muted-foreground mb-6">
               Share photos of office events, team activities, or workplace moments
             </p>
             <Button>
