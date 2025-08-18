@@ -1,14 +1,14 @@
 "use client"
 
 import { useRef, useEffect, useState } from 'react'
-import { Canvas, useFrame, useLoader } from '@react-three/fiber'
+import { Canvas, useFrame } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import { Mesh } from 'three'
+import { Mesh, Object3D } from 'three'
 
 // 3D Logo Mesh Component
 function LogoMesh({ modelPath }: { modelPath: string }) {
   const meshRef = useRef<Mesh>(null)
-  const [model, setModel] = useState<any>(null)
+  const [model, setModel] = useState<Object3D | null>(null)
   const [error, setError] = useState<string | null>(null)
 
   // Load the 3D model
@@ -20,8 +20,8 @@ function LogoMesh({ modelPath }: { modelPath: string }) {
         setModel(gltf.scene)
         setError(null)
       },
-      (progress) => {
-        // Loading progress
+      () => {
+        // Loading progress - parameter removed as unused
       },
       (error) => {
         console.error('Error loading 3D model:', error)

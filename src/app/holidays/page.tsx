@@ -14,9 +14,7 @@ import {
   Coffee,
   Wifi,
   Car,
-  Users,
-  Sun,
-  Moon
+  Users
 } from "lucide-react"
 
 export default function HolidaysPage() {

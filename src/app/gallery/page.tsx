@@ -198,9 +198,11 @@ export default function GalleryPage() {
             {featuredItems.map((item) => (
               <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col h-full">
                 <div className="relative">
-                  <img
+                  <Image
                     src={item.imageUrl}
                     alt={item.title}
+                    width={400}
+                    height={200}
                     className="w-full h-40 sm:h-48 object-cover"
                   />
                   <div className="absolute top-2 right-2">
@@ -276,9 +278,11 @@ export default function GalleryPage() {
                 .map((item) => (
                   <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col h-full">
                     <div className="relative group">
-                      <img
+                      <Image
                         src={item.imageUrl}
                         alt={item.title}
+                        width={400}
+                        height={160}
                         className="w-full h-32 sm:h-40 object-cover group-hover:scale-105 transition-transform duration-200"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-200" />

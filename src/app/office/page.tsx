@@ -7,7 +7,6 @@ import {
   MapPin, 
   Phone, 
   Mail, 
-  Clock, 
   Wifi,
   Coffee,
   Car,
@@ -15,7 +14,6 @@ import {
   Shield,
   Heart,
   Printer,
-  Monitor,
   Zap,
   Wrench,
   AlertCircle

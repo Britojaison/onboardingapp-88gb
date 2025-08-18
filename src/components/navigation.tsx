@@ -6,11 +6,9 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink, 
   NavigationMenuList,
-  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import {
   Sheet,
@@ -19,8 +17,6 @@ import {
 } from "@/components/ui/sheet"
 import { 
   BookOpen, 
-  Calendar, 
-  Clock, 
   FileText, 
   GraduationCap, 
   Home, 
@@ -29,8 +25,7 @@ import {
   Menu
 } from "lucide-react"
 import { useState } from "react"
-import Image from "next/image"
-import Logo3D, { Logo3DText } from "@/components/3d-logo"
+import Logo3D from "@/components/3d-logo"
 
 const navigationItems = [
   {

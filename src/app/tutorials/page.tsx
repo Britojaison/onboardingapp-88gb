@@ -159,10 +159,7 @@ export default function TutorialsPage() {
     }
   }
 
-  const getCategoryIcon = (category: string) => {
-    const cat = categories.find(c => c.key === category)
-    return cat ? cat.icon : BookOpen
-  }
+
 
   const featuredTutorials = tutorials.filter(t => t.isFeatured)
 

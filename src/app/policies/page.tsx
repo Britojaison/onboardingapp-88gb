@@ -15,9 +15,7 @@ import {
   Users,
   Shield,
   DollarSign,
-  AlertTriangle,
-  Building2,
-  X
+  Building2
 } from "lucide-react"
 import { useState } from "react"
 
@@ -142,10 +140,7 @@ export default function PoliciesPage() {
     }
   }
 
-  const handleClosePdf = () => {
-    setIsPdfModalOpen(false)
-    setSelectedPdfUrl(null)
-  }
+
 
   return (
     <div className="space-y-8">

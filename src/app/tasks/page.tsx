@@ -1,8 +1,8 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { FileText, GraduationCap, Settings, User, Shield, Calendar, Building2, Users } from "lucide-react"
+import { FileText, Settings, Shield, Building2, Users } from "lucide-react"
 
 export default function TasksPage() {
   // Mock data - in real app, this would come from Supabase
@@ -177,7 +177,6 @@ export default function TasksPage() {
                 .filter(task => category.id === "all" || task.category === category.id)
                 .map((task) => {
                   const Icon = task.icon
-                  const CategoryIcon = getCategoryIcon(task.category)
                   return (
                     <Card key={task.id} className="hover:shadow-md transition-shadow">
                       <CardContent className="p-4 sm:p-6">
