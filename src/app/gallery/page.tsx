@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { 
-  Image, 
   Search, 
   Heart, 
   Share2, 
@@ -16,6 +15,7 @@ import {
   MapPin,
   Camera
 } from "lucide-react"
+import Image from "next/image"
 
 export default function GalleryPage() {
   // Mock data - in real app, this would come from Sanity

@@ -98,22 +98,7 @@ export default function TasksPage() {
     }
   }
 
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case "account_setup":
-        return Settings
-      case "documentation":
-        return FileText
-      case "training":
-        return Shield
-      case "policy_review":
-        return FileText
-      case "orientation":
-        return Building2
-      default:
-        return FileText
-    }
-  }
+
 
   return (
     <div className="space-y-8">
