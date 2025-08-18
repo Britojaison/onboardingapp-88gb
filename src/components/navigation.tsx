@@ -8,7 +8,7 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
+  NavigationMenuLink, 
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
@@ -30,6 +30,7 @@ import {
 } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
+import Logo3D, { Logo3DText } from "@/components/3d-logo"
 
 const navigationItems = [
   {
@@ -85,12 +86,10 @@ export function Navigation() {
                 <span className="text-xl font-bold">Employee Portal</span>
               </div>
               <div className="lg:hidden">
-                <Image
-                  src="/88gb.png"
-                  alt="88GB Logo"
-                  width={40}
-                  height={40}
-                  className="h-10 w-auto"
+                <Logo3D 
+                  width={75} 
+                  height={75} 
+                  className="h-18 w-18 mt-6"
                 />
               </div>
             </Link>
@@ -122,12 +121,10 @@ export function Navigation() {
           <div className="flex items-center space-x-4">
             {/* Desktop: 88GB Logo on the right */}
             <div className="hidden lg:flex items-center">
-              <Image
-                src="/88gb.png"
-                alt="88GB Logo"
-                width={40}
-                height={40}
-                className="h-10 w-auto"
+              <Logo3D 
+                width={75} 
+                height={75} 
+                className="h-18 w-18 mt-6"
               />
             </div>
 
@@ -142,12 +139,10 @@ export function Navigation() {
               <SheetContent side="left" className="w-[300px] sm:w-[400px]">
                 <nav className="flex flex-col gap-4">
                   <div className="flex items-center justify-center py-4">
-                    <Image
-                      src="/88gb.png"
-                      alt="88GB Logo"
-                      width={48}
-                      height={48}
-                      className="h-12 w-auto"
+                    <Logo3D 
+                      width={90} 
+                      height={90} 
+                      className="h-22 w-22"
                     />
                   </div>
                   {navigationItems.map((item) => {

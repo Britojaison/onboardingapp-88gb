@@ -1,0 +1,276 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R 7 0 R]
+/Count 2
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+/Resources <<
+/Font <<
+/F1 5 0 R
+/F2 6 0 R
+>>
+>>
+>>
+endobj
+
+4 0 obj
+<<
+/Length 3200
+>>
+stream
+BT
+/F1 18 Tf
+50 720 Td
+(88GB IT SECURITY POLICY) Tj
+0 -40 Td
+/F2 12 Tf
+(Effective Date: January 1, 2025) Tj
+0 -20 Td
+(Version: 1.8) Tj
+0 -40 Td
+
+/F1 14 Tf
+(1. PURPOSE) Tj
+0 -20 Td
+/F2 11 Tf
+(This policy establishes security guidelines to protect company data,) Tj
+0 -15 Td
+(systems, and information assets from unauthorized access, disclosure,) Tj
+0 -15 Td
+(modification, and destruction.) Tj
+0 -30 Td
+
+/F1 14 Tf
+(2. SCOPE) Tj
+0 -20 Td
+/F2 11 Tf
+(This policy applies to all employees, contractors, consultants, and) Tj
+0 -15 Td
+(third parties who have access to 88GB IT systems and data.) Tj
+0 -30 Td
+
+/F1 14 Tf
+(3. PASSWORD POLICY) Tj
+0 -20 Td
+/F2 11 Tf
+(• Minimum 8 characters with complexity requirements) Tj
+0 -15 Td
+(• Must include uppercase, lowercase, numbers, and symbols) Tj
+0 -15 Td
+(• Change passwords every 90 days) Tj
+0 -15 Td
+(• No password reuse for last 12 passwords) Tj
+0 -15 Td
+(• Use multi-factor authentication where available) Tj
+0 -30 Td
+
+/F1 14 Tf
+(4. DATA PROTECTION) Tj
+0 -20 Td
+/F2 11 Tf
+(• Classify data based on sensitivity levels) Tj
+0 -15 Td
+(• Encrypt sensitive data in transit and at rest) Tj
+0 -15 Td
+(• Use secure file sharing platforms only) Tj
+0 -15 Td
+(• Do not store company data on personal devices) Tj
+0 -15 Td
+(• Report data breaches immediately to IT team) Tj
+0 -30 Td
+
+/F1 14 Tf
+(5. EMAIL AND INTERNET USAGE) Tj
+0 -20 Td
+/F2 11 Tf
+(• Be cautious of phishing emails and suspicious links) Tj
+0 -15 Td
+(• Do not download unauthorized software) Tj
+0 -15 Td
+(• Avoid accessing non-work-related websites) Tj
+0 -15 Td
+(• Report suspicious emails to IT security team) Tj
+0 -15 Td
+(• Use company-approved cloud services only) Tj
+0 -30 Td
+
+/F1 14 Tf
+(6. DEVICE SECURITY) Tj
+0 -20 Td
+/F2 11 Tf
+(• Install security updates promptly) Tj
+0 -15 Td
+(• Use screen locks and automatic logout) Tj
+0 -15 Td
+(• Do not leave devices unattended) Tj
+0 -15 Td
+(• Report lost or stolen devices immediately) Tj
+0 -15 Td
+(• Use approved antivirus software) Tj
+
+ET
+endstream
+endobj
+
+7 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 8 0 R
+/Resources <<
+/Font <<
+/F1 5 0 R
+/F2 6 0 R
+>>
+>>
+>>
+endobj
+
+8 0 obj
+<<
+/Length 2500
+>>
+stream
+BT
+/F1 14 Tf
+50 720 Td
+(7. REMOTE WORK SECURITY) Tj
+0 -20 Td
+/F2 11 Tf
+(• Use VPN for accessing company resources) Tj
+0 -15 Td
+(• Ensure home Wi-Fi networks are secure) Tj
+0 -15 Td
+(• Keep work area private during video calls) Tj
+0 -15 Td
+(• Use company-provided devices when possible) Tj
+0 -30 Td
+
+/F1 14 Tf
+(8. INCIDENT REPORTING) Tj
+0 -20 Td
+/F2 11 Tf
+(• Report security incidents within 2 hours) Tj
+0 -15 Td
+(• Contact: security@88gb.in or IT helpdesk) Tj
+0 -15 Td
+(• Do not attempt to resolve security issues alone) Tj
+0 -15 Td
+(• Preserve evidence when possible) Tj
+0 -30 Td
+
+/F1 14 Tf
+(9. SOCIAL MEDIA AND COMMUNICATION) Tj
+0 -20 Td
+/F2 11 Tf
+(• Do not share confidential company information) Tj
+0 -15 Td
+(• Be cautious about social engineering attempts) Tj
+0 -15 Td
+(• Verify identity before sharing sensitive information) Tj
+0 -15 Td
+(• Use official communication channels) Tj
+0 -30 Td
+
+/F1 14 Tf
+(10. PHYSICAL SECURITY) Tj
+0 -20 Td
+/F2 11 Tf
+(• Keep workspaces clean and organized) Tj
+0 -15 Td
+(• Lock screens when away from desk) Tj
+0 -15 Td
+(• Do not allow unauthorized access to facilities) Tj
+0 -15 Td
+(• Secure confidential documents) Tj
+0 -30 Td
+
+/F1 14 Tf
+(11. COMPLIANCE AND VIOLATIONS) Tj
+0 -20 Td
+/F2 11 Tf
+(• All employees must acknowledge this policy annually) Tj
+0 -15 Td
+(• Security training is mandatory) Tj
+0 -15 Td
+(• Violations may result in disciplinary action) Tj
+0 -15 Td
+(• Regular security audits will be conducted) Tj
+0 -30 Td
+
+/F1 14 Tf
+(12. CONTACT INFORMATION) Tj
+0 -20 Td
+/F2 11 Tf
+(IT Security Team: security@88gb.in) Tj
+0 -15 Td
+(IT Helpdesk: +91 80 1234 5678) Tj
+0 -15 Td
+(Emergency: Report immediately to management) Tj
+0 -30 Td
+
+/F2 10 Tf
+(Document Control:) Tj
+0 -15 Td
+(Last Updated: January 8, 2025) Tj
+0 -15 Td
+(Next Review: July 2025) Tj
+0 -15 Td
+(Approved by: IT Security Team) Tj
+
+ET
+endstream
+endobj
+
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+>>
+endobj
+
+6 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000120 00000 n 
+0000000279 00000 n 
+0000003531 00000 n 
+0000003596 00000 n 
+0000003656 00000 n 
+0000003815 00000 n 
+trailer
+<<
+/Size 9
+/Root 1 0 R
+>>
+startxref
+6367
+%%EOF

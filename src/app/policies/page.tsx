@@ -39,12 +39,12 @@ export default function PoliciesPage() {
     {
       id: 2,
       title: "Dress Code Policy",
-      description: "Guidelines for appropriate workplace attire and appearance",
+      description: "Guidelines for appropriate workplace attire and professional appearance standards",
       category: "hr",
       version: "v1.2",
-      effectiveDate: "2024-01-01",
-      lastUpdated: "2024-01-05",
-      fileSize: "800 KB",
+      effectiveDate: "2025-01-01",
+      lastUpdated: "2025-01-01",
+      fileSize: "820 KB",
       icon: Users,
       pdfUrl: "/pdfs/dress-code-policy.pdf",
     },
@@ -63,24 +63,24 @@ export default function PoliciesPage() {
     {
       id: 4,
       title: "IT Security Policy",
-      description: "Cybersecurity guidelines and data protection procedures",
+      description: "Comprehensive cybersecurity guidelines and data protection procedures for all employees",
       category: "it",
       version: "v1.8",
-      effectiveDate: "2024-01-01",
-      lastUpdated: "2024-01-08",
-      fileSize: "1.5 MB",
+      effectiveDate: "2025-01-01",
+      lastUpdated: "2025-01-08",
+      fileSize: "425 KB",
       icon: Shield,
       pdfUrl: "/pdfs/it-security-policy.pdf",
     },
     {
       id: 5,
       title: "Expense Reimbursement Policy",
-      description: "Guidelines for business expenses and reimbursement procedures",
+      description: "Business expense guidelines and Razorpay-based reimbursement procedures with digital workflow",
       category: "finance",
       version: "v1.3",
-      effectiveDate: "2024-01-01",
-      lastUpdated: "2024-01-03",
-      fileSize: "950 KB",
+      effectiveDate: "2025-01-01",
+      lastUpdated: "2025-01-03",
+      fileSize: "685 KB",
       icon: DollarSign,
       pdfUrl: "/pdfs/expense-reimbursement-policy.pdf",
     },
@@ -328,7 +328,7 @@ export default function PoliciesPage() {
           {selectedPdfUrl && (
             <div className="flex-1 p-0">
               <iframe
-                src={`${selectedPdfUrl}#toolbar=1&navpanes=1&scrollbar=1`}
+                src={`${selectedPdfUrl}#toolbar=0&navpanes=0&scrollbar=0&statusbar=0&messages=0&scrollbar=0&view=FitH`}
                 className="w-full h-full min-h-[calc(95vh-80px)]"
                 title="PDF Viewer"
                 frameBorder="0"

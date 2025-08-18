@@ -20,73 +20,218 @@ import {
 } from "lucide-react"
 
 export default function HolidaysPage() {
-  // Mock data - in real app, this would come from Supabase/Sanity
-  const holidays = [
+  // Fixed Holidays - mandatory for all employees
+  const fixedHolidays = [
     {
       id: 1,
-      name: "New Year's Day",
-      date: "2024-01-01",
-      description: "New Year's Day celebration",
+      name: "New Year",
+      date: "2025-01-01",
+      description: "Mid week holiday",
+      day: "Wednesday",
       isFloating: false,
-      type: "public"
+      type: "fixed"
     },
     {
       id: 2,
-      name: "Republic Day",
-      date: "2024-01-26",
-      description: "Republic Day of India",
+      name: "Pongal / Makar Sankranti",
+      date: "2025-01-14",
+      description: "Mid week holiday",
+      day: "Tuesday",
       isFloating: false,
-      type: "public"
+      type: "fixed"
     },
     {
       id: 3,
       name: "Holi",
-      date: "2024-03-25",
-      description: "Festival of Colors",
+      date: "2025-03-13",
+      description: "Mid week holiday",
+      day: "Thursday",
       isFloating: false,
-      type: "public"
+      type: "fixed"
     },
     {
       id: 4,
-      name: "Independence Day",
-      date: "2024-08-15",
-      description: "Independence Day of India",
+      name: "Ramzan",
+      date: "2025-03-31",
+      description: "3 days holiday (Sat, Sun, Mon)",
+      day: "Monday",
       isFloating: false,
-      type: "public"
+      type: "fixed"
     },
     {
       id: 5,
-      name: "Gandhi Jayanti",
-      date: "2024-10-02",
-      description: "Birthday of Mahatma Gandhi",
+      name: "Ambedkar Jayanti",
+      date: "2025-04-14",
+      description: "3 days holiday (Sat, Sun, Mon)",
+      day: "Monday",
       isFloating: false,
-      type: "public"
+      type: "fixed"
     },
     {
       id: 6,
-      name: "Diwali",
-      date: "2024-11-01",
-      description: "Festival of Lights",
+      name: "Independence Day",
+      date: "2025-08-15",
+      description: "3 days holiday (Fri, Sat, Sun)",
+      day: "Friday",
       isFloating: false,
-      type: "public"
+      type: "fixed"
     },
     {
       id: 7,
-      name: "Christmas",
-      date: "2024-12-25",
-      description: "Christmas Day",
+      name: "Ganesh Chaturthi",
+      date: "2025-08-27",
+      description: "Mid week holiday",
+      day: "Wednesday",
       isFloating: false,
-      type: "public"
+      type: "fixed"
     },
     {
       id: 8,
-      name: "Company Foundation Day",
-      date: "2024-06-15",
-      description: "Annual company celebration",
+      name: "Gandhi Jayanti / Dusshera",
+      date: "2025-10-02",
+      description: "Mid week holiday",
+      day: "Thursday",
       isFloating: false,
-      type: "company"
+      type: "fixed"
+    },
+    {
+      id: 9,
+      name: "Diwali Break",
+      date: "2025-10-17",
+      description: "Mini Vacation",
+      day: "Friday",
+      isFloating: false,
+      type: "fixed"
+    },
+    {
+      id: 10,
+      name: "Diwali",
+      date: "2025-10-20",
+      description: "Mid week holiday",
+      day: "Monday",
+      isFloating: false,
+      type: "fixed"
+    },
+    {
+      id: 11,
+      name: "Christmas",
+      date: "2025-12-25",
+      description: "Mid week holiday",
+      day: "Thursday",
+      isFloating: false,
+      type: "fixed"
     }
   ]
+
+  // Optional Holidays - employees can choose any 2
+  const optionalHolidays = [
+    {
+      id: 12,
+      name: "Guru Gobind Singh Jayanti",
+      date: "2025-01-06",
+      description: "Optional holiday",
+      day: "Monday",
+      isFloating: true,
+      type: "optional"
+    },
+    {
+      id: 13,
+      name: "Good Friday",
+      date: "2025-04-18",
+      description: "Optional holiday",
+      day: "Friday",
+      isFloating: true,
+      type: "optional"
+    },
+    {
+      id: 14,
+      name: "Onam",
+      date: "2025-09-05",
+      description: "Optional holiday",
+      day: "Friday",
+      isFloating: true,
+      type: "optional"
+    },
+    {
+      id: 15,
+      name: "Guru Nanak Jayanti",
+      date: "2025-11-05",
+      description: "Optional holiday",
+      day: "Wednesday",
+      isFloating: true,
+      type: "optional"
+    }
+  ]
+
+  // Weekend Holidays - National/Regional/Restricted holidays falling on Saturday or Sunday
+  const weekendHolidays = [
+    {
+      id: 16,
+      name: "Republic Day",
+      date: "2025-01-26",
+      description: "National holiday falling on weekend",
+      day: "Sunday",
+      isFloating: false,
+      type: "weekend"
+    },
+    {
+      id: 17,
+      name: "Ugadi",
+      date: "2025-03-30",
+      description: "Regional holiday falling on weekend",
+      day: "Sunday",
+      isFloating: false,
+      type: "weekend"
+    },
+    {
+      id: 18,
+      name: "Easter",
+      date: "2025-04-20",
+      description: "Regional holiday falling on weekend",
+      day: "Sunday",
+      isFloating: false,
+      type: "weekend"
+    },
+    {
+      id: 19,
+      name: "Muharram",
+      date: "2025-07-06",
+      description: "Regional holiday falling on weekend",
+      day: "Sunday",
+      isFloating: false,
+      type: "weekend"
+    },
+    {
+      id: 20,
+      name: "Raksha Bandhan",
+      date: "2025-08-09",
+      description: "Regional holiday falling on weekend",
+      day: "Saturday",
+      isFloating: false,
+      type: "weekend"
+    },
+    {
+      id: 21,
+      name: "Janmashtami",
+      date: "2025-08-16",
+      description: "Regional holiday falling on weekend",
+      day: "Saturday",
+      isFloating: false,
+      type: "weekend"
+    },
+    {
+      id: 22,
+      name: "Kannada Rajyothsava",
+      date: "2025-11-01",
+      description: "Regional holiday falling on weekend",
+      day: "Saturday",
+      isFloating: false,
+      type: "weekend"
+    }
+  ]
+
+  // Combine all holidays for display purposes
+  const holidays = [...fixedHolidays, ...optionalHolidays, ...weekendHolidays]
 
   const officeInfo = {
     address: "3rd floor, Landmark: Polar, Bear Icecream Building, 88GB, 27th Main Rd, Parangi Palaya, Sector 2, HSR Layout, Bengaluru, Karnataka 560102",
@@ -113,10 +258,12 @@ export default function HolidaysPage() {
 
   const getHolidayTypeColor = (type: string) => {
     switch (type) {
-      case "public":
+      case "fixed":
         return "bg-red-100 text-red-800"
-      case "company":
-        return "bg-blue-100 text-blue-800"
+      case "optional":
+        return "bg-green-100 text-green-800"
+      case "weekend":
+        return "bg-orange-100 text-orange-800"
       case "floating":
         return "bg-green-100 text-green-800"
       default:
@@ -129,7 +276,7 @@ export default function HolidaysPage() {
     return holidays
       .filter(holiday => new Date(holiday.date) >= today)
       .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
-      .slice(0, 5)
+      .slice(0, 3)
   }
 
   const upcomingHolidays = getUpcomingHolidays()
@@ -160,7 +307,7 @@ export default function HolidaysPage() {
                 Upcoming Holidays
               </CardTitle>
               <CardDescription className="text-sm sm:text-base">
-                Next 5 upcoming holidays
+                Next 3 upcoming holidays
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -195,26 +342,23 @@ export default function HolidaysPage() {
             </CardContent>
           </Card>
 
-          {/* All Holidays */}
+          {/* Fixed Holidays */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-base sm:text-lg">All Holidays 2024</CardTitle>
+              <CardTitle className="text-base sm:text-lg">Fixed Holidays 2025</CardTitle>
               <CardDescription className="text-sm sm:text-base">
-                Complete list of company holidays for the year
+                Mandatory holidays for all employees
               </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {holidays.map((holiday) => (
+                {fixedHolidays.map((holiday) => (
                   <Card key={holiday.id} className="hover:shadow-md transition-shadow flex flex-col h-full">
                     <CardHeader className="pb-3 sm:pb-4 flex flex-col flex-1">
                       <div className="flex items-center justify-between mb-3 sm:mb-4">
                         <Badge className={getHolidayTypeColor(holiday.type)}>
                           {holiday.type}
                         </Badge>
-                        {holiday.isFloating && (
-                          <Badge variant="outline">Floating</Badge>
-                        )}
                       </div>
                       <CardTitle className="text-base sm:text-lg mb-2 sm:mb-3">{holiday.name}</CardTitle>
                       <CardDescription className="flex-1 text-sm sm:text-base">{holiday.description}</CardDescription>
@@ -232,6 +376,89 @@ export default function HolidaysPage() {
                   </Card>
                 ))}
               </div>
+            </CardContent>
+          </Card>
+
+          {/* Optional Holidays */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base sm:text-lg">Optional Holidays 2025</CardTitle>
+              <CardDescription className="text-sm sm:text-base">
+                Choose any 2 holidays from this list
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
+                {optionalHolidays.map((holiday) => (
+                  <Card key={holiday.id} className="hover:shadow-md transition-shadow flex flex-col h-full">
+                    <CardHeader className="pb-3 sm:pb-4 flex flex-col flex-1">
+                      <div className="flex items-center justify-between mb-3 sm:mb-4">
+                        <Badge className={getHolidayTypeColor(holiday.type)}>
+                          {holiday.type}
+                        </Badge>
+                      </div>
+                      <CardTitle className="text-base sm:text-lg mb-2 sm:mb-3">{holiday.name}</CardTitle>
+                      <CardDescription className="flex-1 text-sm sm:text-base">{holiday.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="mt-auto pt-0">
+                      <div className="text-sm sm:text-base font-medium">
+                        {new Date(holiday.date).toLocaleDateString('en-US', {
+                          weekday: 'long',
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        })}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Weekend Holidays */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base sm:text-lg">Weekend Holidays 2025</CardTitle>
+              <CardDescription className="text-sm sm:text-base">
+                National/Regional/Restricted holidays falling on Saturday or Sunday
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {weekendHolidays.map((holiday) => (
+                  <Card key={holiday.id} className="hover:shadow-md transition-shadow flex flex-col h-full">
+                    <CardHeader className="pb-3 sm:pb-4 flex flex-col flex-1">
+                      <div className="flex items-center justify-between mb-3 sm:mb-4">
+                        <Badge className={getHolidayTypeColor(holiday.type)}>
+                          {holiday.type}
+                        </Badge>
+                      </div>
+                      <CardTitle className="text-base sm:text-lg mb-2 sm:mb-3">{holiday.name}</CardTitle>
+                      <CardDescription className="flex-1 text-sm sm:text-base">{holiday.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="mt-auto pt-0">
+                      <div className="text-sm sm:text-base font-medium">
+                        {new Date(holiday.date).toLocaleDateString('en-US', {
+                          weekday: 'long',
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        })}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Holiday Note */}
+          <Card className="bg-amber-50 border-amber-200">
+            <CardContent className="pt-6">
+              <p className="text-sm text-amber-800 italic text-center">
+                *Kindly note the holiday calendar is subject to change every year.
+              </p>
             </CardContent>
           </Card>
         </TabsContent>
