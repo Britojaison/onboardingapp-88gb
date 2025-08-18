@@ -155,7 +155,7 @@ export default function GalleryPage() {
   ]
 
   const categories = [
-    { key: "all", label: "All", icon: Image, count: galleryItems.length },
+    { key: "all", label: "All", icon: Camera, count: galleryItems.length },
     { key: "office", label: "Office", icon: Building2, count: galleryItems.filter(g => g.category === "office").length },
     { key: "team", label: "Team", icon: Users, count: galleryItems.filter(g => g.category === "team").length },
     { key: "events", label: "Events", icon: Calendar, count: galleryItems.filter(g => g.category === "events").length },
@@ -256,10 +256,10 @@ export default function GalleryPage() {
         <div className="px-2 sm:px-4 md:px-0">
           <TabsList className="flex w-full overflow-x-auto whitespace-nowrap gap-2 sm:gap-3 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 sm:gap-0">
             {categories.map((category) => {
-              const Icon = category.icon
+              const CategoryIcon = category.icon
               return (
                 <TabsTrigger key={category.key} value={category.key} className="text-xs sm:text-sm">
-                  <Icon className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 md:mr-3" />
+                  <CategoryIcon className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 md:mr-3" />
                   <span className="hidden sm:inline">{category.label}</span>
                   <span className="sm:hidden">{category.label.split(' ')[0]}</span>
                   <span className="hidden sm:inline">({category.count})</span>

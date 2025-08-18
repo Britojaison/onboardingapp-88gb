@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/sheet"
 import { 
   BookOpen, 
+  Calendar,
   FileText, 
   GraduationCap, 
   Home, 
