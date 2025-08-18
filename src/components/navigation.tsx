@@ -85,7 +85,7 @@ export function Navigation() {
                 <Logo3D 
                   width={75} 
                   height={75} 
-                  className="h-18 w-18 mt-6"
+                  className="h-18 w-18 mt-6 -ml-2"
                 />
               </div>
             </Link>
