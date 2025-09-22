@@ -241,7 +241,7 @@ export default function HolidaysPage() {
       wednesday: "10:00 AM - 7:00 PM",
       thursday: "10:00 AM - 7:00 PM",
       friday: "10:00 AM - 7:00 PM",
-      saturday: "10:00 AM - 7:00 PM",
+      saturday: "Closed",
       sunday: "Closed"
     },
     facilities: [
