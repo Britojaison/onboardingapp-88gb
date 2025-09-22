@@ -24,17 +24,17 @@ export default function OfficePage() {
   const officeInfo = {
     mainOffice: {
       name: "Main Office - Bangalore",
-      address: "123 Tech Park, Phase 2, Electronic City, Bangalore - 560100",
-      phone: "+91 80 1234 5678",
-      email: "bangalore@company.com",
+      address: "3rd floor, Landmark: Polar, Bear Icecream Building, 88GB, 27th Main Rd, Parangi Palaya, Sector 2, HSR Layout, Bengaluru, Karnataka 560102",
+      phone: "8056437389",
+      email: "connect@88gb.in",
       coordinates: { lat: 12.9716, lng: 77.5946 },
       workingHours: {
-        monday: "9:00 AM - 6:00 PM",
-        tuesday: "9:00 AM - 6:00 PM",
-        wednesday: "9:00 AM - 6:00 PM",
-        thursday: "9:00 AM - 6:00 PM",
-        friday: "9:00 AM - 6:00 PM",
-        saturday: "9:00 AM - 1:00 PM",
+        monday: "10:00 AM - 7:00 PM",
+        tuesday: "10:00 AM - 7:00 PM",
+        wednesday: "10:00 AM - 7:00 PM",
+        thursday: "10:00 AM - 7:00 PM",
+        friday: "10:00 AM - 7:00 PM",
+        saturday: "Closed",
         sunday: "Closed"
       }
     },
@@ -245,7 +245,7 @@ export default function OfficePage() {
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Button className="w-full sm:w-auto">
+                <Button className="w-full sm:w-auto" onClick={() => window.open('https://maps.app.goo.gl/R5epebJT1sN9ySjf7', '_blank')}>
                   <MapPin className="h-4 w-4 mr-2" />
                   Get Directions
                 </Button>
