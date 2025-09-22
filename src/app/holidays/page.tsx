@@ -245,12 +245,12 @@ export default function HolidaysPage() {
       sunday: "Closed"
     },
     facilities: [
-      { name: "Free Wi-Fi", icon: Wifi, description: "High-speed internet access" },
+      { name: "Wi-Fi", icon: Wifi, description: "High-speed internet access" },
       { name: "Cafeteria", icon: Coffee, description: "Full-service cafeteria with meals" },
       { name: "Parking", icon: Car, description: "Free parking for employees" },
       { name: "Meeting Rooms", icon: Users, description: "Conference rooms and meeting spaces" },
       //{ name: "Gym", icon: Building2, description: "On-site fitness center" },
-      { name: "Medical Room", icon: Building2, description: "First aid and medical assistance" }
+      { name: "Studio Room", icon: Building2, description: "Shooting Studio" }
     ]
   }
 
